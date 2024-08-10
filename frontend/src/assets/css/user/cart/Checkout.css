@@ -1,0 +1,79 @@
+/* Checkout.css */
+
+.checkout-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--background);
+}
+
+.checkout-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--foreground);
+}
+
+.checkout-empty {
+    color: var(--muted);
+}
+
+.checkout-item {
+    border: 1px solid var(--border);
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: var(--background);
+}
+
+.checkout-item p {
+    margin: 5px 0;
+    color: var(--foreground);
+}
+
+.checkout-total {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.checkout-total h2 {
+    font-size: 1.2rem;
+    color: var(--foreground);
+}
+
+.checkout-place-order-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-place-order-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.checkout-place-order-btn:active {
+    background-color: var(--primary-dark);
+    transform: translateY(1px);
+}
+
+button:focus {
+    outline: none;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+button.disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+button.disabled:hover {
+    background-color: var(--primary);
+}

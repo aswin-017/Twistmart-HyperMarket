@@ -1,0 +1,156 @@
+/* General styling for the carousel container */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+.carousel {
+    position: relative;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding: 20px;
+    background-color: var(--background); /* Use CSS variable for background color */
+    border-radius: var(--radius); /* Use CSS variable for border radius */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transition for box-shadow and transform */
+  }
+  
+  /* Styling for the carousel inner container */
+  .carousel-inner {
+    position: relative;
+    overflow: hidden;
+    max-height: 400px; /* Set maximum height for the carousel */
+  }
+  
+  /* Styling for each carousel item */
+  .carousel-item {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .carousel-item.active {
+    position: static;
+    opacity: 1;
+  }
+  
+  /* Flexbox layout for carousel content */
+  .carousel-content {
+    display: flex;
+    flex-direction: column-reverse; /* Reverse column for smaller screens */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Styling for carousel image */
+  .carousel-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px; /* Adjust maximum height of the image */
+    border-radius: var(--radius); /* Use CSS variable for border radius */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  .carousel-image:hover{
+    transform: translateY(-10px); /* Move section up on hover */
+    transition: transform 0.3s ease;
+    border-radius: 50px 20px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Styling for carousel description */
+  .carousel-description {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  
+  .carousel-header {
+    font-size: 2rem; /* Reduce font size for header */
+    font-weight: 700;
+    font-family: cursive;
+    color: var(--foreground); /* Use CSS variable for text color */
+    margin-bottom: 10px;
+  }
+  
+  .carousel-paragraph {
+    font-size: 1rem; /* Reduce font size for paragraph */
+    line-height: 1.6;
+    color: var(--foreground); /* Use CSS variable for muted text color */
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Styling for carousel controls */
+  .carousel-control {
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    height: 40px;
+    width: 40px;
+    line-height: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    z-index: 10;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .carousel-control.prev {
+    left: 20px;
+  }
+  
+  .carousel-control.next {
+    right: 20px;
+  }
+  
+  .carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #ddd;
+  }
+  
+  /* Styling for carousel indicators */
+  .carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 10px; /* Adjust position from bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+  
+  .carousel-indicators li {
+    display: inline-block;
+    margin: 0 5px;
+  }
+  
+  .carousel-bullet {
+    background: none;
+    border: none;
+    color: var(--muted); /* Use CSS variable for muted text color */
+    cursor: pointer;
+    font-size: 1.5rem; /* Adjust font size for navigation dots */
+    transition: color 0.3s ease;
+  }
+  
+  .carousel-bullet.active {
+    color: var(--primary); /* Use CSS variable for primary color */
+  }
+  
+  .carousel-bullet:hover {
+    color: var(--accent); /* Use CSS variable for accent color */
+  }
+  
+  /* Hover effect on carousel */
+  .carousel:hover {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* Adjust shadow on hover */
+    transform: translateY(-20px); 
+    border-radius: 50px 20px;
+  }
+  

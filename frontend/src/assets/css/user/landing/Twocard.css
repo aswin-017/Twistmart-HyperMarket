@@ -1,0 +1,66 @@
+/* Wrapper to hold the grid layout */
+.unique-twocard__grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
+  gap: 30px; /* Space between cards */
+  padding: 20px; /* Padding around the grid */
+  max-width: 1200px; /* Maximum width of the grid container */
+  margin-left: auto;
+  margin-right: auto; /* Center the grid container */
+}
+
+/* Style for each card */
+.unique-twocard__card {
+  width: 100%; /* Adjust the width to fill the column */
+  max-width: 300px; /* Maximum width of the card */
+  height: 200px; /* Fixed height for the card to maintain rectangle shape */
+  border: 1px solid #ccc;
+  border-radius: 12px; /* Curved corners */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Hide overflow */
+  background-color: #fff; /* Card background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Position relative for image positioning */
+}
+
+/* Style for the image inside the card */
+.unique-twocard__image {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; /* Maintain the image aspect ratio */
+  display: block;
+}
+
+/* Grid layout for cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Auto-fit cards with minimum width */
+  gap: 30px; /* Space between cards */
+  padding: 20px; /* Padding around the grid */
+  width: 100%; /* Ensure the grid takes full width */
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+}
+
+/* Style for each card */
+.card1 {
+  width: 100%; /* Full width of the column */
+  min-width: 300px; /* Minimum width for the card */
+  overflow: hidden;
+  border-radius: 12px; /* Curved corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff; /* Card background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Position relative for image positioning */
+  height: 200px; /* Ensure consistent height */
+}
+
+/* Style for the image inside the card */
+.card1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

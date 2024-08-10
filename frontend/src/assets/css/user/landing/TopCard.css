@@ -1,0 +1,41 @@
+/* Container for the UniqueTopCard Carousel */
+.unique-topcard__container {
+  margin: 90px auto;
+  padding: 0 5%;
+  width: 100%;
+}
+
+/* Slide styling for the UniqueTopCard Carousel */
+.unique-topcard__slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px; /* Add gap between cards */
+}
+
+.unique-topcard__slide img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+}
+
+/* Slick dots customization */
+.slick-dots {
+  bottom: -30px;
+}
+
+/* Slick navigation arrows customization */
+.slick-prev, .slick-next {
+  font-size: 24px;
+  color: #cdcbcb;
+}
+
+.slick-prev:hover, .slick-next:hover {
+  color: #000000;
+}
+
+.unique-topcard__heading {
+  font-size: 2rem;
+  margin-left: 5rem;
+}

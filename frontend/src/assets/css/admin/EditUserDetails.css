@@ -1,0 +1,74 @@
+/* Edit User Container */
+.edit-user-container {
+    padding: 20px;
+    max-width: 500px; /* Set a max-width for better control on larger screens */
+    margin: 0 auto; /* Center the container */
+    background-color: var(--background-light); /* Optional background color */
+    border-radius: var(--radius); /* Rounded corners for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Edit User Form */
+  .edit-user-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Full width of the container */
+    margin: 0 auto; /* Center the form */
+  }
+  
+  /* Form Labels */
+  .edit-user-form label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: var(--text-dark); /* Consistent text color */
+  }
+  
+  /* Form Inputs and Selects */
+  .edit-user-form input,
+  .edit-user-form select {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border); /* Border color from variables */
+    border-radius: var(--radius); /* Rounded corners for inputs */
+    font-size: 14px; /* Ensures consistency */
+    color: var(--text-dark); /* Text color */
+    background-color: var(--primary-foreground);
+  }
+  
+  /* Buttons Container */
+  .edit-user-form .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Individual Buttons */
+  .edit-user-form .buttons button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius); /* Consistent rounded corners */
+    font-size: 14px; /* Ensures consistency */
+    color: var(--primary-foreground); /* Text color */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+  }
+  
+  /* Save Button */
+  .edit-user-form .buttons button:first-of-type {
+    background-color: var(--primary); /* Primary button color */
+  }
+  
+  .edit-user-form .buttons button:first-of-type:hover {
+    background-color: var(--primary-dark); /* Darker primary color on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+  }
+  
+  /* Cancel Button */
+  .edit-user-form .buttons button:last-of-type {
+    background-color: var(--accent); /* Accent button color */
+  }
+  
+  .edit-user-form .buttons button:last-of-type:hover {
+    background-color: var(--accent-dark); /* Darker accent color on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+  }
+  

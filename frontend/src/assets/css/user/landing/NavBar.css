@@ -1,0 +1,66 @@
+/* Basic styling for the navbar */
+.unique-navbar {
+    display: flex;
+    align-items: center;
+    background-color: #218838;
+    padding: 10px 20px;
+    color: #fff;
+    justify-content: center; /* Center align the menu items */
+    position: relative;
+}
+
+/* Center the navbar-menu */
+.unique-navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.unique-navbar-item {
+    position: relative;
+}
+
+.unique-navbar-item a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.unique-navbar-item a:hover {
+    background-color: #555;
+}
+
+/* Dropdown styles */
+.unique-dropdown-menu {
+    display: block;
+    position: absolute;
+    background-color: #444;
+    min-width: 160px;
+    padding: 10px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.unique-dropdown-menu a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.unique-dropdown-menu a:hover {
+    background-color: #555;
+}
+
+/* Hide dropdown initially */
+.unique-navbar-item.unique-dropdown .unique-dropdown-menu {
+    display: none;
+}
+
+.unique-navbar-item.unique-dropdown:hover .unique-dropdown-menu {
+    display: block;
+}

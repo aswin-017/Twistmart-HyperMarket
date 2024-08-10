@@ -1,0 +1,126 @@
+/* src/assets/css/Header.css */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--background); /* Updated for dynamic theme */
+    border-bottom: 1px solid var(--border); /* Updated for dynamic theme */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-left .company-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--foreground); /* Updated for dynamic theme */
+    margin-right: 20px;
+  }
+  .header-left .company-logo {
+    height: 60px; /* Adjust this value as needed */
+    width: auto;
+  }
+  
+  
+  .header-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .header-center .search-box {
+    display: flex;
+    align-items: center;
+    background-color: var(--muted); /* Updated for dynamic theme */
+    border-radius: var(--radius); /* Updated for dynamic theme */
+    padding: 5px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-center .search-box i {
+    margin-right: 10px;
+    color: var(--primary); /* Updated for dynamic theme */
+  }
+  
+  .header-center .search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 10px;
+    flex-grow: 1;
+    font-size: 16px;
+  }
+  
+  .header-center .search-box span {
+    margin-left: 10px;
+    color: var(--primary); /* Updated for dynamic theme */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  
+  .header-right .profile-icon,
+  .header-right .cart-button {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    padding: 10px 15px;
+    border: none;
+    background-color: var(--primary); /* Updated for dynamic theme */
+    color: var(--primary-foreground); /* Updated for dynamic theme */
+    border-radius: var(--radius); /* Updated for dynamic theme */
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .header-right .profile-icon i,
+  .header-right .cart-button i {
+    margin-right: 5px;
+  }
+  
+  .header-right .profile-icon:hover,
+  .header-right .cart-button:hover {
+    background-color: var(--primary-dark); /* Updated for dynamic theme */
+  }
+  
+  .header-right .cart-button {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-right .cart-button i {
+    margin-right: 5px;
+  }
+  
+  .header-right .cart-button .item-count {
+    background-color: var(--accent); /* Updated for dynamic theme */
+    color: var(--accent-foreground); /* Updated for dynamic theme */
+    border-radius: var(--radius); /* Updated for dynamic theme */
+    padding: 0 5px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+  
+  .header-right .toggle-theme {
+    margin-left: 20px;
+  }
+  

@@ -1,0 +1,79 @@
+/* Container for Product Partner Section */
+.product-partner-container {
+    padding: 20px;
+    background-color: var(--background); /* Use light blue background */
+}
+
+/* Table Styling */
+.product-partner-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-background); /* Use light blue card background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for better separation */
+}
+
+.product-partner-table th,
+.product-partner-table td {
+    border: 1px solid var(--border); /* Use soft blue border */
+    padding: 12px; /* Slightly increased padding for better readability */
+    text-align: left;
+}
+
+/* Table Header Styling */
+.product-partner-table th {
+    background-color: var(--muted); /* Use lighter blue for header background */
+    color: var(--foreground); /* Use black text color for contrast */
+    font-weight: 600; /* Bold font for header */
+}
+
+/* Product Partner Shop Image */
+.product-partner-shop-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover; /* Ensure images cover the area without distortion */
+    border-radius: 50%; /* Rounded corners for images */
+}
+
+/* Button Styling */
+.product-partner-edit-button,
+.product-partner-delete-button,
+.product-partner-location-button {
+    margin-right: 8px; /* Slightly increased spacing */
+    padding: 8px 12px; /* Slightly increased padding for better usability */
+    border: none;
+    border-radius: var(--radius); /* Use rounded corners from variable */
+    color: var(--primary-foreground); /* White text color */
+    cursor: pointer;
+    font-size: 14px; /* Consistent font size */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+/* Edit Button */
+.product-partner-edit-button {
+    background-color: var(--primary); /* Use strong blue primary color */
+}
+
+.product-partner-edit-button:hover {
+    background-color: var(--primary-dark); /* Use darker blue for hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Delete Button */
+.product-partner-delete-button {
+    background-color: var(--accent); /* Use light blue accent color */
+}
+
+.product-partner-delete-button:hover {
+    background-color: var(--primary-dark); /* Use darker blue for hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Location Button */
+.product-partner-location-button {
+    background-color: var(--accent); /* Use light blue accent color */
+}
+
+.product-partner-location-button:hover {
+    background-color: var(--primary-dark); /* Use darker blue for hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}

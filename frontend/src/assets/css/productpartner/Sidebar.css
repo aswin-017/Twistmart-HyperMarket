@@ -1,0 +1,220 @@
+
+.sidebar {
+    background-color: var(--card-background);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2rem 1rem;
+    width: 15rem;
+    height: 100vh;
+    transition: width 0.5s ease;
+    z-index: 1000;
+}
+
+.sidebar .logoContainer {
+    display: flex;
+    transition: width 0.5s ease;
+}
+
+.sidebar .logoContainer img {
+    height: 3rem;
+    transition: opacity 0.5s ease;
+}
+
+.sidebar .burgerContainer {
+    content: "";
+    background-color: var(--primary);
+    position: absolute;
+    right: -17.5px;
+    top: calc(9rem / 1.15);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    z-index: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .burgerContainer .burgerTrigger {
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+}
+
+.sidebar .burgerContainer .burgerMenu {
+    background-color: var(--primary);
+    width: 20px;
+    height: 3px;
+    border-radius: 2rem;
+    transition: 0.5s all;
+    position: relative;
+}
+
+.sidebar .burgerContainer .burgerMenu::before,
+.sidebar .burgerContainer .burgerMenu::after {
+    content: "";
+    background-color: var(--primary-foreground);
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    border-radius: 2rem;
+    transition: 0.5s all;
+}
+
+.sidebar .burgerContainer .burgerMenu::before {
+    top: -0.4rem;
+    transform: translateY(0.4rem) rotate(-45deg);
+}
+
+.sidebar .burgerContainer .burgerMenu::after {
+    top: 0.4rem;
+    transform: translateY(-0.4rem) rotate(45deg);
+}
+
+.sidebar .profileContainer {
+    display: flex;
+    align-items: center;
+    padding-top: 3rem;
+}
+
+.sidebar .profileContainer img {
+    width: auto;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.sidebar .profileContainer .profileContents {
+    padding-left: 1rem;
+}
+
+.sidebar .profileContainer .profileContents p.name {
+    margin: 0;
+    font-size: 16.7px;
+    color: var(--foreground);
+    text-transform: capitalize;
+    font-weight: 800;
+}
+
+.sidebar .profileContainer .profileContents p {
+    margin: 0;
+    font-size: 13.9px;
+    color: var(--foreground);
+    text-transform: lowercase;
+}
+
+.sidebar .contentsContainer {
+    margin-top: 2rem;
+}
+
+.sidebar .contentsContainer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .contentsContainer ul li {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin: 0.75rem 0;
+    transition: background-color 0.25s ease;
+}
+
+.sidebar .contentsContainer ul li svg {
+    margin-right: 1rem;
+}
+
+.sidebar .contentsContainer ul li span {
+    font-size: 18px;
+    color: var(--foreground);
+    transition: opacity 0.5s ease;
+}
+
+.sidebar .contentsContainer ul li.active {
+    background-color: var(--border);
+}
+
+.sidebar .contentsContainer ul li.active span {
+    color: var(--primary);
+}
+
+.sidebar .contentsContainer ul li:hover {
+    background-color: var(--border);
+}
+
+.sidebar.active {
+    width: 5.25rem;
+    transition: width 0.5s ease;
+}
+
+.sidebar.active .logoContainer {
+    width: 5.25rem;
+    justify-content: center; 
+}
+
+.sidebar.active .logoContainer img {
+    height: 2rem; 
+}
+
+.sidebar.active .burgerContainer {
+    right: -17.5px; 
+}
+
+.sidebar.active .burgerContainer .burgerMenu {
+    background-color: var(--primary-foreground);
+}
+
+.sidebar.active .burgerContainer .burgerMenu::before,
+.sidebar.active .burgerContainer .burgerMenu::after {
+    transform: translateY(0) rotate(0deg);
+}
+
+.sidebar.active .profileContainer .profileContents {
+    opacity: 0;
+}
+
+.sidebar.active .contentsContainer ul li span {
+    display: none; 
+}
+
+.sidebar.active .contentsContainer ul li svg {
+    margin-right: 0;
+    width: 24px; 
+    height: 24px;
+}
+
+.content1 {
+    margin-left: 15rem;
+    padding: 20px;
+    flex-grow: 1;
+    transition: margin-left 0.5s ease;
+}
+
+.sidebar.active ~ .content1 {
+    margin-left: 5.25rem;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 20vw;
+    }
+
+    .sidebar.active {
+        width: 5.25rem;
+    }
+
+    .content1 {
+        margin-left: 20vw;
+    }
+
+    .sidebar.active ~ .content1 {
+        margin-left: 5.25rem;
+    }
+}

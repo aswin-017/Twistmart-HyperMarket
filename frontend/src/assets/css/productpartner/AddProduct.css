@@ -1,0 +1,89 @@
+/* AddProduct.css */
+
+/* Container for Add Product Section */
+.add-product-container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--background); /* Use light blue background */
+    border-radius: var(--radius); /* Use rounded corners from variable */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Forms Styling */
+.product-form, .category-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-form h2, .category-form h2 {
+    margin-bottom: 20px;
+    color: var(--foreground); /* Use black text color for contrast */
+}
+
+.product-form label, .category-form label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--foreground); /* Use black text color for contrast */
+}
+
+/* Input and Textarea Styling */
+.product-form input, 
+.category-form input, 
+.product-form textarea, 
+.category-form textarea, 
+.category-form select {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid var(--border); /* Use soft blue border */
+    border-radius: var(--radius); /* Use rounded corners from variable */
+}
+
+/* Form Navigation Styling */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Button Styling */
+.save-next-button, 
+.back-button, 
+.add-product-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--radius); /* Use rounded corners from variable */
+    cursor: pointer;
+    color: var(--primary-foreground); /* White text color */
+    font-weight: bold;
+    transition: background-color 0.3s, opacity 0.2s; /* Smooth transitions */
+}
+
+/* Save & Next Button */
+.save-next-button {
+    background-color: var(--primary); /* Use strong blue primary color */
+}
+
+.save-next-button:hover {
+    background-color: var(--primary-dark); /* Use darker blue for hover */
+    opacity: 0.8;
+}
+
+/* Back Button */
+.back-button {
+    background-color: var(--muted); /* Use lighter blue for background */
+}
+
+.back-button:hover {
+    background-color: var(--primary-dark); /* Use darker blue for hover */
+    opacity: 0.8;
+}
+
+/* Add Product Button */
+.add-product-button {
+    background-color: var(--primary); /* Use strong blue primary color */
+}
+
+.add-product-button:hover {
+    background-color: var(--primary-dark); /* Use darker blue for hover */
+    opacity: 0.8;
+}

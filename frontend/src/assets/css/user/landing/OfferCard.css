@@ -1,0 +1,35 @@
+.unique-card__container {
+    margin-top: 2rem;
+    width: auto;
+    /* padding-left: 150px; */
+    /* padding-right: 50px; */
+    /* overflow-y: hidden; */
+}
+
+.unique-card__row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem; /* Adds space between rows of cards */
+}
+
+.unique-card__column {
+    flex: 0 0 100%; /* Ensures each card takes the full width of its column */
+    display: flex;
+    justify-content: center;
+}
+
+.unique-card__item {
+    border: none;
+    width: 175vh; /* Adjusted width to fit better within column */
+    height: 210px; /* Fixed height to make the card rectangular */
+    overflow: hidden; /* Ensures the image does not overflow the card */
+    margin: 0 10px; /* Adds space between cards */
+    border-radius: 15px; /* Adds rounded corners to the card */
+}
+
+.unique-card__image {
+    width: 100%;
+    height: 90%; /* Ensures the image covers the card’s height */
+    object-fit: cover; /* Ensures the image maintains aspect ratio and covers the card */
+    border-radius: 15px; /* Ensures the image follows the rounded corners of the card */
+}

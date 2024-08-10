@@ -1,0 +1,44 @@
+/* Wrapper for the entire component */
+.distinct-brands__container {
+  padding: 20px;
+}
+
+/* Heading for the trending products section */
+.distinct-brands__heading {
+  font-size: 2rem;
+  margin-left: 5rem; /* Adjust based on your layout needs */
+}
+
+/* Container for the card elements */
+.distinct-brands__cards {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping to a new row */
+  justify-content: space-between;
+  gap: 20px; /* Space between cards */
+  overflow-x: auto;
+  padding: 20px;
+  margin-left: 100px;
+  margin-right: 100px; /* Horizontal scrolling if needed */
+}
+
+/* Style for each card */
+.distinct-brands__card {
+  width: calc(100% / 6 - 20px); /* Adjust width with gap consideration */
+  border-radius: 15px; /* Curved corners */
+  overflow: hidden; /* Hide overflow */
+  flex: 0 0 auto; /* Prevent flex item from shrinking */
+}
+
+/* Style for the image inside the card */
+.distinct-brands__image {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  object-fit: cover;
+}
+
+/* Secondary heading for popular brands */
+.distinct-brands__secondary-heading {
+  font-size: 2rem;
+  margin-left: 5rem; /* Adjust based on your layout needs */
+}

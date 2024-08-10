@@ -1,0 +1,50 @@
+/* src/assets/css/admin/ApprovePage.css */
+
+.approve-page-container {
+    padding: 20px;
+}
+
+.approve-page-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.approve-page-table th, .approve-page-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.approve-page-table th {
+    background-color: #f2f2f2;
+}
+
+.approve-page-shop-image {
+    width: 100px;
+    height: 100px;
+}
+
+.approve-page-approve-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.approve-page-approve-button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+.approve-page-approve-button.approved {
+    background-color: #d4edda; /* Example: green background */
+    border-color: #c3e6cb; /* Example: green border */
+    color: #155724; /* Example: green text */
+    cursor: not-allowed; /* Change cursor when button is approved */
+}

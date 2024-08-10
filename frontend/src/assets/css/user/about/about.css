@@ -1,0 +1,61 @@
+/* General styling for the About Us section */
+.about-us {
+  width: 100%; /* Full width of the container */
+  margin: 0; /* Ensure no extra margin is applied */
+  text-align: center; /* Center the image and text */
+  padding: 0; /* Remove any default padding */
+  position: relative; /* For possible future absolute positioning */
+}
+
+/* Container for the image and overlay */
+.about-image-container {
+  position: relative; /* For overlay content positioning */
+  overflow: hidden; /* Ensure no overflow outside the container */
+}
+
+/* Styling for the image */
+.about-image {
+  width: 100%; /* Full width of the container */
+  height: 500px; /* Fixed height */
+  object-fit: cover; /* Cover the space without distortion */
+  display: block; /* Ensure image is block level for margin auto */
+  transition: transform 0.5s ease; /* Smooth zoom effect on hover */
+}
+
+/* Zoom effect on hover */
+.about-image:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Overlay content styling */
+.overlay-content {
+  position: absolute; /* Overlay on top of the image */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6); /* Darker background for better readability */
+  padding: 30px; /* Increased padding */
+  border-radius: 15px; /* More rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  max-width: 80%; /* Limit the width of the overlay content */
+  margin: 0 auto; /* Center the overlay horizontally */
+}
+
+/* Styling for the heading text */
+.overlay-content h1 {
+  font-size: 2.5rem; /* Larger font size */
+  margin-bottom: 10px; /* Spacing between headings */
+  font-weight: bold; /* Bold text */
+  letter-spacing: 1px; /* Slight letter spacing */
+}
+
+/* Styling for the subheading text */
+.overlay-content h2 {
+  font-size: 1.5rem; /* Slightly smaller than h1 */
+  font-weight: 300; /* Light font weight */
+  line-height: 1.5; /* Spacing between lines */
+  max-width: 90%; /* Limit the width for better text alignment */
+  margin: 0 auto; /* Center the subheading */
+}

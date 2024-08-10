@@ -1,0 +1,125 @@
+/* src/assets/css/Navbar.css */
+
+/* Navbar container */
+.navbar-container {
+  margin-top: 80px;
+  margin-bottom: 10px; /* Adjust based on the header height */
+  width: 100%;
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: var(--card-background); /* Use theme background */
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border); /* Use theme border */
+  position: relative; /* Ensure dropdown positioning works correctly */
+}
+
+/* Navbar list */
+.navbar-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar items */
+.navbar-item {
+  margin: 0 15px;
+  position: relative; /* Ensure dropdown items are positioned correctly */
+}
+
+/* Navbar links */
+.navbar-link {
+  color: var(--foreground); /* Use theme text color */
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s, transform 0.3s; /* Smooth color and transform transitions */
+  cursor: pointer; /* Change to pointer cursor */
+}
+
+/* Navbar link hover */
+.navbar-link:hover {
+  color: var(--primary); /* Use theme primary color */
+  transform: scale(1.05); /* Slightly scale up the link on hover */
+}
+
+/* Logout button */
+.logout-button {
+  background: none; /* Ensure no background color */
+  border: none;
+  color: var(--foreground); /* Ensure logout button matches theme text color */
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+  transition: color 0.3s, transform 0.3s; /* Smooth color and transform transitions */
+}
+
+/* Logout button hover */
+.logout-button:hover {
+  color: var(--primary); /* Use theme primary color */
+  transform: scale(1.05); /* Slightly scale up the button on hover */
+  background-color: transparent; /* Ensure background remains transparent on hover */
+}
+
+/* Dropdown styling */
+.dropdown {
+  position: absolute;
+  top: 100%; /* Position below the dropdown item */
+  left: 0;
+  background-color: var(--background); /* Dropdown background color */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Dropdown box shadow */
+  z-index: 1000; /* Ensure dropdown appears above other content */
+  display: none;
+  padding: 10px 0;
+  border-radius: 4px; /* Example dropdown border radius */
+  min-width: 200px; /* Ensure dropdown has a minimum width */
+}
+
+/* Show dropdown when open */
+.dropdown.show {
+  display: block;
+  margin-top: 10px;
+}
+
+/* Dropdown items */
+.dropdown-item {
+  list-style: none; /* Remove default list-style */
+  margin: 0;
+  color: var(--foreground); /* Dropdown item text color */
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s, color 0.3s; /* Smooth background and text color transitions */
+}
+
+/* Dropdown item hover */
+.dropdown-item:hover {
+  background-color: var(--primary); /* Dropdown item hover background color */
+  color: var(--background); /* Dropdown item hover text color */
+}
+
+/* Separator */
+.separator {
+  height: 1px;
+  background-color: #ccc; /* Separator color */
+  margin: 5px 0;
+}
+
+/* Dropdown toggler */
+.dropdown-toggler {
+  color: var(--foreground); /* Toggler text color */
+  text-decoration: none;
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s, transform 0.3s; /* Smooth color and transform transitions */
+}
+
+/* Dropdown toggler hover */
+.dropdown-toggler:hover {
+  color: var(--primary); /* Toggler text color on hover */
+  transform: scale(1.05); /* Slightly scale up the toggler on hover */
+}

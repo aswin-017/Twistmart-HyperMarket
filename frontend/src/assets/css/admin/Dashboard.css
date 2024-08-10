@@ -1,0 +1,48 @@
+/* Dashboard Styles */
+.dashboard {
+  padding: 20px;
+  background-color: var(--background); /* Light gray background */
+}
+
+/* Card Grid Container */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between cards */
+  justify-content: center;
+}
+
+/* Individual Stats Card */
+.stats-card {
+  background: var(--card-background); /* White background for cards */
+  border-radius: var(--radius); /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px;
+  width: calc(25% - 20px); /* 4 cards in a row with space for gap */
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for stats cards */
+.stats-card:hover {
+  transform: scale(1.03); /* Slight scale effect on hover */
+}
+
+/* Icon Container within the Card */
+.icon-container {
+  margin-bottom: 10px;
+}
+
+/* Stats Content Title */
+.stats-content h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: var(--text-dark); /* Dark text color */
+}
+
+/* Stats Content Value */
+.stats-content p {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-primary); /* Primary text color */
+}

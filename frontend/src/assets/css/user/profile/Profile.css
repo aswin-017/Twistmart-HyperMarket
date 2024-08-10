@@ -1,0 +1,89 @@
+/* src/assets/css/Profile.css */
+
+/* General styles for the profile container */
+.profile-container {
+    display: flex;
+    min-height: 100vh; /* Ensure the container stretches to at least full height */
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+/* Styles for the fixed sidebar */
+.profile-sidenav {
+    position: fixed; /* Fixed position to stay visible while scrolling */
+    width: 250px; /* Fixed width for the sidebar */
+    height: 100%; /* Occupy full height of viewport */
+    background-color: var(--muted); /* Use theme muted color */
+    padding: 20px; /* Padding around the sidebar content */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Box shadow for sidebar */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Heading style for the sidebar */
+.profile-sidenav h2 {
+    margin-top: 0; /* Remove default margin for heading */
+}
+
+/* Style for the unordered list inside the sidebar */
+.profile-sidenav ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+/* Style for each list item in the sidebar */
+.profile-sidenav li {
+    padding: 12px 20px; /* Padding for each sidebar item */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-bottom: 1px solid var(--border); /* Use theme border color */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for sidebar items */
+.profile-sidenav li:hover {
+    background-color: var(--background);
+    border-radius: 10px; /* Use theme hover color */
+}
+
+/* Styles for the main content area */
+.profile-content {
+    flex: 1; /* Take remaining space in the flex container */
+    padding: 20px; /* Padding inside the content area */
+    margin-left: 250px; /* Ensure content area doesn't overlap with sidebar */
+    overflow-y: auto; /* Allow content area to scroll if needed */
+}
+
+/* Styles for different sections within the content area */
+.profile-details,
+.profile-orders,
+.profile-wishlist,
+.profile-notifications {
+    background-color: var(--muted); /* Use theme muted color */
+    padding: 20px; /* Padding inside each section */
+    border-radius: var(--radius); /* Use theme border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for sections */
+}
+
+/* Styles for individual address cards */
+.address-card {
+    background-color: var(--background); /* Use theme background color */
+    padding: 15px; /* Padding inside the address card */
+    border: 1px solid var(--border); /* Use theme border color */
+    border-radius: var(--radius); /* Use theme border radius */
+    margin-bottom: 10px; /* Margin between address cards */
+}
+
+/* Styles for buttons in the profile */
+.edit-button,
+.add-address-button,
+.edit-button {
+    background-color: var(--primary); /* Use theme primary color */
+    color: var(--primary-foreground); /* Use theme primary text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Padding inside the button */
+    border-radius: var(--radius); /* Use theme border radius */
+    font-size: 16px; /* Font size for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin: 5px; /* Margin around buttons */
+}

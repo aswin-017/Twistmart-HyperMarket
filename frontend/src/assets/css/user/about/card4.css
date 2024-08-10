@@ -1,0 +1,88 @@
+/* General styling for the awards recognition section */
+.awards-recognition-section {
+    padding: 40px; /* Increased padding for better spacing */
+    background: var(--background); 
+    margin: 30px;
+    border-radius: var(--radius);
+  }
+  
+  /* Hover effect */
+  .awards-recognition-section:hover {
+    transform: translateY(-20px); /* Move section up on hover */
+    transition: transform 0.3s ease;
+    border-radius: 50px 20px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* Adjust shadow on hover */
+
+  }
+  
+  .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px; /* Increased gap between sections */
+  }
+  
+  .section-description {
+    flex: 2;
+    max-width: 600px; /* Set max width to ensure the description area is wide but not too wide */
+    margin-right: 40px; /* Increased margin for separation */
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 20px; /* Increased margin bottom for spacing */
+    font-family: 'Arial', sans-serif; /* Font family update */
+    color: var(--foreground); /* Darker text color */
+  }
+  
+  .section-description p {
+    font-size: 1.1rem; /* Adjusted font size for better readability */
+    line-height: 1.6;
+    text-align: justify; /* Justify the text within the paragraph */
+    padding: 10px; /* Adjust padding for better spacing */
+    color: var(--primary); /* Muted text color */
+  }
+  
+  .certifications {
+    display: flex;
+    gap: 40px; /* Increased gap between certifications */
+    flex: 1;
+    justify-content: flex-end; /* Align the certification cards to the right */
+  }
+  
+  .certification {
+    background-color: #fff;
+    padding: 30px; /* Increased padding for better spacing */
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced box shadow */
+    text-align: center;
+    flex: 1;
+  }
+  .certification:hover {
+    transform: translateY(-20px); /* Move section up on hover */
+    transition: transform 0.5s ease;
+    border-radius: 50px 20px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+}
+  
+  .certification-image {
+    width: 120px; /* Increased image size */
+    height: 120px; /* Increased image size */
+    margin-bottom: 20px; /* Increased margin bottom for spacing */
+  }
+  
+  .certification-title {
+    font-size: 1.75rem; /* Increased font size for title */
+    margin-bottom: 15px; /* Increased margin bottom for spacing */
+    font-family: 'Roboto', sans-serif; /* Font family update */
+    color: var(--primary); /* Updated title color */
+  }
+  
+  .certification-description {
+    font-size: 1.1rem; /* Adjusted font size for description */
+    color: var(--foreground); /* Muted text color */
+    text-align: justify; /* Justify the text within the certification description */
+  }

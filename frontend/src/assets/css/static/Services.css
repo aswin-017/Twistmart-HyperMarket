@@ -1,0 +1,82 @@
+/* General Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Heading Styles */
+.heading {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: var(--foreground); /* Black text color */
+}
+
+/* Card Container Styles */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between; /* Distributes cards evenly */
+  padding: 0 1rem;
+  margin-bottom: 100px;
+  padding-top: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+/* Card Styles */
+.card {
+  flex: 1 1 calc(20% - 16px); /* 5 cards per row, with gap consideration */
+  box-sizing: border-box;
+  border: 1px solid var(--border); /* Soft blue border */
+  border-radius: var(--radius); /* Use variable for rounded corners */
+  overflow: hidden;
+  background-color: var(--card-background); /* Very light blue background for cards */
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03); /* Slightly larger scale effect */
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 8px; /* Reduced padding for smaller cards */
+}
+
+.card-title {
+  font-size: 1rem; /* Smaller font size */
+  margin: 0;
+  color: var(--foreground); /* Black text color */
+}
+
+.card-description {
+  font-size: 0.875rem; /* Smaller font size */
+  color: var(--muted); /* Lighter blue for description text */
+  text-align: justify;
+  line-height: 1.8;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 4px; /* Reduced margin */
+  font-size: 0.875rem; /* Smaller font size */
+  color: var(--primary); /* Strong blue primary color */
+  text-decoration: none;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}

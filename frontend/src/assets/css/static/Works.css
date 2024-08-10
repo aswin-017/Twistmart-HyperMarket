@@ -1,0 +1,117 @@
+/* Styles specific to the page with a namespace */
+.page-works-container {
+    background-color: var(--primary-dark); /* Darker blue background for the page */
+    color: var(--foreground); /* Text color */
+    padding: 1px;
+    min-height: 70vh; /* Ensure the page takes at least full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Container for the cards on the page */
+  .page-works-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Adjusted gap between cards */
+    justify-content: center; /* Center the cards horizontally */
+    margin-bottom: 50px; /* Reduced space below the card container */
+    padding-top: 50px; /* Reduced padding at the top */
+    margin-right: 100px; /* Adjusted right margin */
+    margin-left: 100px; /* Adjusted left margin */
+  }
+  
+  /* Individual card styling on the page */
+  .page-works-card {
+    flex: 1 1 calc(25% - 16px); /* Adjust width for 4 cards per row */
+    box-sizing: border-box;
+    border: 1px solid var(--border); /* Soft blue border */
+    border-radius: var(--radius); /* Rounded corners */
+    overflow: hidden;
+    background-color: var(--card-background); /* Very light blue background for cards */
+    transition: transform 0.3s ease;
+    height: 300px; /* Fixed height for rectangular shape */
+  }
+  
+  /* Hover effect for the card */
+  .page-works-card:hover {
+    transform: scale(1.02); /* Slightly larger scale effect */
+  }
+  
+  /* Image styling within the card */
+  .page-works-card-image {
+    width: 100%;
+    height: 60%; /* Adjust height to ensure rectangular shape */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+  }
+  
+  /* Content styling within the card */
+  .page-works-card-content {
+    padding: 16px; /* Increased padding */
+    height: 40%; /* Adjusted content height to fit within the remaining space */
+    display: flex; /* Flexbox for centering text */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center text vertically */
+    align-items: center; /* Center text horizontally */
+    text-align: center; /* Center text alignment */
+  }
+  
+  /* Title styling within the card */
+  .page-works-card-title {
+    font-size: 1rem; /* Adjusted font size */
+    margin: 0;
+    color: var(--foreground); /* Text color */
+  }
+  
+  /* Description styling within the card */
+  .page-works-card-description {
+    font-size: 0.875rem; /* Adjusted font size */
+    color: var(--muted); /* Lighter blue for description text */
+    margin-top: 8px; /* Space between title and description */
+  }
+  
+  /* Link styling within the card */
+  .page-works-card-link {
+    display: inline-block;
+    margin-top: 12px; /* Adjusted margin */
+    font-size: 1rem; /* Font size for the link */
+    color: var(--primary); /* Strong blue primary color */
+    text-decoration: none;
+  }
+  
+  /* Link hover effect */
+  .page-works-card-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Section heading styling */
+  .page-works-section-heading {
+    text-align: center;
+    margin-bottom: 10px; /* Reduced space between heading and card container */
+    font-size: 2.5rem; /* Adjusted font size as needed */
+    color: var(--accent-foreground); /* White text on accent color */
+  }
+  
+  /* Button container styling */
+  .page-works-register-button-container {
+    text-align: center;
+  }
+  
+  /* Register button styling */
+  .page-works-register-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: var(--primary-foreground); /* White text on button */
+    background-color: var(--primary); /* Button color */
+    text-decoration: none;
+    border-radius: var(--radius); /* Rounded corners */
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Register button hover effect */
+  .page-works-register-button:hover {
+    background-color: var(--accent); /* Light blue accent color on hover */
+  }
+  

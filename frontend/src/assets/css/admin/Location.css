@@ -1,0 +1,31 @@
+.location-container {
+    padding: 20px;
+}
+
+.location-details {
+    margin-top: 20px;
+}
+
+.location-item {
+    margin-bottom: 10px;
+}
+
+.location-item label {
+    margin-right: 10px;
+}
+
+.location-save-button, .location-edit-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.location-save-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.location-edit-button {
+    background-color: #008CBA;
+    color: white;
+}

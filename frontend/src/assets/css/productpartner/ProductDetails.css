@@ -1,0 +1,130 @@
+
+/* General container for the product details page */
+.product-details-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: var(--background);
+    min-height: 100vh;
+}
+
+/* Card for displaying product information */
+.product-info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 40px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    background-color: var(--card-background);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.product-info-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Product image styling with fixed dimensions and cropping */
+.product-image {
+    width: 100%;
+    margin-top: 20px;
+    max-width: 250px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+}
+
+/* Product name styling */
+.product-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--foreground);
+    margin-top: 15px;
+}
+
+/* Heading for available shops section */
+.shops-heading {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: var(--foreground);
+}
+
+/* Container for the list of shops */
+.shops-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Card for each shop */
+.shop-info-card {
+    width: 300px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    background-color: var(--card-background);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shop-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Shop image styling with fixed dimensions and cropping */
+.shop-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: 15px;
+}
+
+/* Shop information styling */
+.shop-name {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--foreground);
+}
+
+.shop-description-text {
+    font-size: 15px;
+    color: var(--muted);
+    margin: 10px 0;
+}
+
+.shop-price-tag {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--foreground);
+    margin: 10px 0;
+}
+
+/* Add to Cart button styling */
+.add-to-cart-button {
+    padding: 12px 20px;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.05);
+}

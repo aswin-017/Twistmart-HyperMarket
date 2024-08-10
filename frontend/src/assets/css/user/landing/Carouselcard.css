@@ -1,0 +1,153 @@
+:root {
+    --gray-darker: #444444;
+    --gray-dark: #696969;
+    --gray: #999999;
+    --gray-light: #cccccc;
+    --gray-lighter: #ececec;
+    --gray-lightest: #f9f9f9;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+
+  
+  img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+  
+
+  
+  .btn--block {
+    display: block;
+    width: 100%;
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cards__item {
+    display: flex;
+    padding: 1rem;
+  }
+  
+  @media (min-width: 40rem) {
+    .cards__item {
+      width: 50%;
+    }
+  }
+  
+  @media (min-width: 56rem) {
+    .cards__item {
+      width: 33.3333%;
+    }
+  }
+  
+  @media (min-width: 80rem) {
+    .cards__item {
+      width: 20%;
+    }
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Removed hover transform effect */
+  }
+  
+  .card.clicked {
+    cursor: pointer;
+  }
+  
+  .card__content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .card__image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    overflow: hidden;
+  }
+  
+  .card__title {
+    color: var(--gray-dark);
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0.5rem 0;
+  }
+  
+  .card__text {
+    flex: 1 1 auto;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+  }
+  
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .quantity-controls button {
+    background-color: var(--gray-lighter);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: fixed;
+  }
+  
+  .quantity-controls span {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  /* Partners Carousel Styles */
+  
+  .unique-carousel__wrapper {
+    width: 100%;
+    padding: 0 5%;
+    margin: auto;
+  }
+  
+  .unique-carousel__heading {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  .unique-carousel__container {
+    /* Add space around the carousel */
+  }
+  
+  .unique-carousel__slide {
+    padding: 0 10px; /* Adjust this value to control the gap between cards */
+  }
+  
+  .unique-carousel__slide img {
+    max-width: 100%;
+    display: block;
+  }
+  

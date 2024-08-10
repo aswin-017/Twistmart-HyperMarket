@@ -1,0 +1,64 @@
+/* src/assets/css/productpartner/ManageProduct.css */
+
+/* Container for Manage Product Section */
+.manage-product-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background-color: var(--background); /* Use light blue background */
+    border-radius: var(--radius); /* Use rounded corners from variable */
+}
+
+/* Form Styling */
+.manage-product-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.manage-product-form label {
+    margin-bottom: 15px;
+    color: var(--foreground); /* Use black text color for contrast */
+}
+
+/* Input, Textarea, and Select Styling */
+.manage-product-form input,
+.manage-product-form textarea,
+.manage-product-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--border); /* Use soft blue border */
+    border-radius: var(--radius); /* Use rounded corners from variable */
+}
+
+/* File Input Styling */
+.manage-product-form input[type="file"] {
+    border: none;
+}
+
+/* Product Image Preview Styling */
+.manage-product-form .product-image-preview {
+    margin-top: 10px;
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    border: 1px solid var(--border); /* Use soft blue border */
+    border-radius: var(--radius); /* Use rounded corners from variable */
+}
+
+/* Button Styling */
+.manage-product-form button {
+    padding: 12px 20px;
+    background-color: var(--primary); /* Use strong blue primary color */
+    color: var(--primary-foreground); /* White text color */
+    border: none;
+    border-radius: var(--radius); /* Use rounded corners from variable */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.manage-product-form button:hover {
+    background-color: var(--primary-dark); /* Use darker blue for hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}

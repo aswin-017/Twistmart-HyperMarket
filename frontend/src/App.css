@@ -1,0 +1,134 @@
+/* Light Theme */
+.light {
+    --background: #cce7ff; /* Light blue background for body */
+    --foreground: #000000; /* Black text color for contrast */
+    --muted: #a2c2e3; /* Lighter blue for muted elements */
+    --border: #80b3ff; /* Soft blue border */
+    --primary: #0056b3; /* Strong blue primary color */
+    --primary-foreground: #ffffff; /* White text on primary color */
+    --primary-dark: #003d7a; /* Darker blue for dark primary */
+    --accent: #66a3ff; /* Light blue accent color */
+    --accent-foreground: #ffffff; /* White text on accent color */
+    --radius: 4px; /* Rounded corners */
+    --card-background: #e0f0ff; /* Very light blue background for cards */
+  }
+  
+  /* Dark Theme */
+  .dark {
+    --background: #001f3f; /* Dark navy blue background for body */
+    --foreground: #b3d9ff; /* Light blue text color */
+    --muted: #003366; /* Muted dark blue */
+    --border: #004080; /* Darker blue border */
+    --primary: #0099ff; /* Bright blue primary color */
+    --primary-foreground: #ffffff; /* White text on primary color */
+    --primary-dark: #007acc; /* Deep blue for dark primary */
+    --accent: #0066cc; /* Medium blue accent color */
+    --accent-foreground: #ffffff; /* White text on accent color */
+    --radius: 4px; /* Rounded corners */
+    --card-background: #00264d; /* Darker blue background for cards */
+  }
+  
+  
+  /* Apply theme variables to the body */
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    margin: 0;
+    font-family: Arial, sans-serif; /* Optional: set a default font */
+  }
+  
+  /* Other global styles */
+  a {
+    color: var(--primary);
+  }
+  
+  /* button {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border: none;
+    border-radius: var(--radius);
+    padding: 10px 15px;
+    cursor: pointer;
+  } */
+  
+/* General button styling */
+/* General button styling */
+button {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  border-radius: 50px;
+  padding: 14px 28px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+/* Hover state */
+button:hover {
+  background-color: var(--primary-dark);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Active state */
+button:active {
+  background-color: var(--primary-dark);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+}
+
+/* Disabled state */
+button:disabled {
+  background-color: var(--muted);
+  color: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+  /* input, textarea {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 5px;
+  } */
+  
+  /* General styling for input and textarea elements */
+input, textarea {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+  width: 100%; /* Ensure full width within parent container */
+  box-sizing: border-box;
+}
+
+/* Focus state styling */
+input:focus, textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Placeholder styling */
+input::placeholder, textarea::placeholder {
+  color: var(--muted);
+  opacity: 1; /* Ensures placeholder text is visible */
+}
+
+/* Disabled state styling */
+input:disabled, textarea:disabled {
+  background-color: #f4f4f4;
+  border-color: #ccc;
+  color: #999;
+  cursor: not-allowed;
+}

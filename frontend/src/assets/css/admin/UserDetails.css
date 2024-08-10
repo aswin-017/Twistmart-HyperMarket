@@ -1,0 +1,77 @@
+/* User Details Container */
+.user-details-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+    color: var(--text-dark); /* Dark text color */
+  }
+  
+  /* Heading */
+/* Heading */
+
+
+  
+  /* User Details Table */
+  .user-details-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 20px;
+  }
+  
+  /* Table Header and Cells */
+  .user-details-table th,
+  .user-details-table td {
+    border: 1px solid var(--border); /* Border color */
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: middle;
+  }
+  
+  /* Table Header */
+  .user-details-table th {
+    background-color: var(--muted); /* Lighter background for headers */
+    color: var(--text-dark); /* Darker text color */
+    font-weight: 600;
+  }
+  
+  /* Table Row Hover Effect */
+  .user-details-table tr:hover {
+    background-color: var(--hover-background); /* Light background on hover */
+    transition: background-color 0.3s;
+  }
+  
+  /* Buttons */
+  .edit-button,
+  .delete-button {
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: none;
+    border-radius: var(--radius); /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 14px;
+    color: var(--primary-foreground); /* White text color */
+  }
+  
+  /* Edit Button */
+  .edit-button {
+    background-color: var(--primary); /* Primary color */
+  }
+  
+  .edit-button:hover {
+    background-color: var(--primary-dark); /* Darker primary color on hover */
+    transform: translateY(-2px);
+  }
+  
+  /* Delete Button */
+  .delete-button {
+    background-color: var(--accent); /* Accent color */
+  }
+  
+  .delete-button:hover {
+    background-color: var(--accent-dark); /* Darker accent color on hover */
+    transform: translateY(-2px);
+  }
+  

@@ -1,0 +1,53 @@
+/* src/assets/css/admin/ApplicationsDetails.css */
+
+/* Container for Applications Details Section */
+.applications-details-container {
+    padding: 20px;
+    background-color: var(--background); /* Use light blue background */
+}
+
+/* Table Styling */
+.applications-details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--card-background); /* Use light blue card background */
+}
+
+.applications-details-table th, 
+.applications-details-table td {
+    border: 1px solid var(--border); /* Use soft blue border */
+    padding: 8px;
+}
+
+/* Table Header Styling */
+.applications-details-table th {
+    background-color: var(--muted); /* Use lighter blue for header background */
+    color: var(--foreground); /* Use black text color for contrast */
+    text-align: left;
+}
+
+/* Shop Image Styling */
+.applications-details-shop-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover; /* Ensure images cover the area without distortion */
+    border-radius: 50%; /* Rounded corners for images */
+}
+
+/* Approve Button Styling */
+.applications-details-approve-button {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: var(--primary); /* Use strong blue primary color */
+    color: var(--primary-foreground); /* White text color */
+    border: none;
+    border-radius: var(--radius); /* Use rounded corners from variable */
+    font-size: 14px; /* Consistent font size */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.applications-details-approve-button:hover {
+    background-color: var(--primary-dark); /* Use darker blue for hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
