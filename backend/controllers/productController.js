@@ -171,11 +171,13 @@ const getProductAndShops = (req, res) => {
 
     let query = `
         SELECT 
+            p.product_id,
             p.product_name, 
             p.product_description, 
             p.product_image, 
             p.base_price, 
             p.stock_quantity, 
+            s.shop_id,
             s.shop_name, 
             s.shop_description, 
             s.shop_image

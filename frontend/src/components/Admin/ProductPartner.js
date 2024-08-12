@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { FaEdit, FaTrash, FaMapMarkerAlt } from 'react-icons/fa'; // Import icons
 import '../../assets/css/admin/ProductPartner.css';
 
 const ProductPartner = () => {
@@ -38,7 +39,7 @@ const ProductPartner = () => {
 
     return (
         <div className="product-partner-container">
-            <h2>Product Partners</h2>
+            <h2 className="product-partner-title">Product Partners</h2>
             <table className="product-partner-table">
                 <thead>
                     <tr>
@@ -56,12 +57,26 @@ const ProductPartner = () => {
                             <td>{partner.shop_id}</td>
                             <td>{partner.shop_name}</td>
                             <td>{partner.shop_description}</td>
-                            <td><img src={partner.shop_image} alt={partner.shop_name} className="product-partner-shop-image" /></td>
-                            <td>{partner.owner_id}</td>
                             <td>
-                                <button className="product-partner-edit-button" onClick={() => handleEdit(partner.shop_id)}>Edit</button>
-                                <button className="product-partner-delete-button" onClick={() => handleDelete(partner.shop_id)}>Delete</button>
-                                <button className="product-partner-location-button" onClick={() => handleGetLocation(partner.shop_id)}>Get Location</button>
+                                <img src={partner.shop_image} alt={partner.shop_name} className="product-partner-shop-image" />
+                            </td>
+                            <td>{partner.owner_id}</td>
+                            <td className="actions-cell">
+                                <FaEdit 
+                                    className="action-icon edit-icon" 
+                                    onClick={() => handleEdit(partner.shop_id)} 
+                                    title="Edit"
+                                />
+                                <FaTrash 
+                                    className="action-icon delete-icon" 
+                                    onClick={() => handleDelete(partner.shop_id)} 
+                                    title="Delete"
+                                />
+                                <FaMapMarkerAlt 
+                                    className="action-icon" 
+                                    onClick={() => handleGetLocation(partner.shop_id)} 
+                                    title="Get Location"
+                                />
                             </td>
                         </tr>
                     ))}

@@ -32,7 +32,7 @@
     border-radius: var(--radius); /* Rounded corners for inputs */
     font-size: 14px; /* Ensures consistency */
     color: var(--text-dark); /* Text color */
-    background-color: var(--primary-foreground);
+    background-color: var(--input-background);
   }
   
   /* Buttons Container */

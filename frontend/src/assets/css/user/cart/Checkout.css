@@ -1,27 +1,42 @@
-/* Checkout.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 .checkout-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
     background-color: var(--background);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
 }
 
 .checkout-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight: 700;
     margin-bottom: 20px;
     color: var(--foreground);
+    text-align: center;
 }
 
 .checkout-empty {
+    font-size: 1.2rem;
     color: var(--muted);
+    text-align: center;
 }
 
 .checkout-item {
     border: 1px solid var(--border);
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: var(--background);
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: var(--card-background);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.checkout-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .checkout-item p {
@@ -29,35 +44,74 @@
     color: var(--foreground);
 }
 
+.checkout-item-name {
+    font-weight: 600;
+}
+
+.checkout-item-shop,
+.checkout-item-price,
+.checkout-item-quantity,
+.checkout-item-total {
+    font-weight: 400;
+}
+
 .checkout-total {
     margin-top: 20px;
     text-align: right;
 }
 
-.checkout-total h2 {
-    font-size: 1.2rem;
+.checkout-total-price {
+    font-size: 1.5rem;
+    font-weight: 700;
     color: var(--foreground);
 }
 
-.checkout-place-order-btn {
+.checkout-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
     margin-top: 20px;
-    padding: 10px 20px;
+}
+
+.checkout-place-order-btn,
+.checkout-cash-on-delivery-btn {
+    padding: 12px 25px;
     cursor: pointer;
-    background-color: var(--primary);
-    color: var(--primary-foreground);
     border: none;
     border-radius: var(--radius);
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.checkout-place-order-btn {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+}
+
+.checkout-cash-on-delivery-btn {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
 }
 
 .checkout-place-order-btn:hover {
     background-color: var(--primary-dark);
 }
 
-.checkout-place-order-btn:active {
-    background-color: var(--primary-dark);
+.checkout-cash-on-delivery-btn:hover {
+    background-color: #FF4C4C; /* Red for Cash on Delivery button */
+}
+
+.checkout-place-order-btn:active,
+.checkout-cash-on-delivery-btn:active {
     transform: translateY(1px);
+}
+
+.icon {
+    margin-right: 8px;
 }
 
 button:focus {
@@ -67,13 +121,4 @@ button:focus {
 button:disabled {
     cursor: not-allowed;
     opacity: 0.65;
-}
-
-button.disabled {
-    cursor: not-allowed;
-    opacity: 0.65;
-}
-
-button.disabled:hover {
-    background-color: var(--primary);
 }

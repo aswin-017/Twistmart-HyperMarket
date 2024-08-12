@@ -11,6 +11,8 @@ const partnerWithUsRoutes = require('./routes/partnerWithUsRoutes');
 const routes = require('./routes/routes');
 const emailRoutes = require('./routes/emailRoutes');
 const cartRoutes = require('./routes/cartRoutes');
+const orderRoutes = require('./routes/orderRoutes');
+const addressRoutes = require('./routes/addressRoutes');
 const app = express();
 
 // Middleware setup
@@ -21,7 +23,7 @@ app.use(bodyParser.json({ limit: '10mb' })); // Increase the limit as needed
 app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' })); // Increase the limit as needed
 
 app.use(cookieParser()); 
-app.use('/api/cart', cartRoutes);~
+app.use('/api', cartRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use('/api/products', productRoutes);
@@ -30,6 +32,8 @@ app.use('/api/locations', shopLocationRoutes);
 app.use('/api/partner-with-us', partnerWithUsRoutes); 
 app.use('/api', routes);
 app.use('/api/emails', emailRoutes);
+app.use('/api', orderRoutes);
+app.use('/api', addressRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

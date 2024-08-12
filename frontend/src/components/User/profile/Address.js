@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import '../assets/css/Address.css'; // Make sure to create this CSS file
-import { useAuth } from './context/AuthContext'; // Import useAuth
+import { useAuth } from '../../contexts/AuthContext'; // Import useAuth
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import "../../../assets/css/user/profile/Address.css";
+
 
 const Address = () => {
   const { userId } = useAuth(); // Use useAuth to get userId
@@ -15,15 +16,16 @@ const Address = () => {
   const [country, setCountry] = useState('');
 
   const handleSaveAddress = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent default form submission behavior
+
     try {
-      // Replace with your backend API URL
-      const response = await fetch(`http://localhost:8080/api/addresses/user/${userId}`, {
+      const response = await fetch('http://localhost:5000/api/addresses', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+          userId,
           street,
           city,
           state,
@@ -32,24 +34,23 @@ const Address = () => {
         }),
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to save address');
+      const result = await response.json();
+      if (response.ok) {
+        toast.success('Address added successfully!');
+        navigate('/user/profile'); // Redirect to profile page after successful save
+      } else {
+        toast.error(`Failed to add address: ${result.message}`);
       }
-
-      const data = await response.json();
-      toast.success('Address saved successfully!');
-      
-      // Redirect to profile page after saving address
-      navigate('/profile');
     } catch (error) {
-      toast.error('Failed to save address.');
+      console.error('Error:', error);
+      toast.error('An error occurred while saving the address.');
     }
   };
 
   return (
     <div className="address-container">
-      <button className="back-to-profile" onClick={() => navigate('/profile')}>
-        Back to Profile
+      <button className="back-to-profile" onClick={() => navigate('/user/profile')}>
+        Back
       </button>
       <div className="address-box">
         <h2>Enter Address</h2>

@@ -1,130 +1,75 @@
-
 /* General container for the product details page */
 .product-details-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 30px;
-    background-color: var(--background);
+    background-color: var(--background); /* Light background for better contrast */
     min-height: 100vh;
 }
 
-/* Card for displaying product information */
-.product-info-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 800px;
-    width: 100%;
-    margin-bottom: 40px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px;
-    background-color: var(--card-background);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: box-shadow 0.3s ease;
-}
-
-.product-info-card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Product image styling with fixed dimensions and cropping */
-.product-image {
-    width: 100%;
-    margin-top: 20px;
-    max-width: 250px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: var(--radius);
+/* Title styling */
+.product-details-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--foreground); /* Dark text color for the title */
     margin-bottom: 20px;
 }
 
-/* Product name styling */
-.product-title {
-    font-size: 32px;
-    font-weight: 600;
-    color: var(--foreground);
-    margin-top: 15px;
-}
-
-/* Heading for available shops section */
-.shops-heading {
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 30px;
-    color: var(--foreground);
-}
-
-/* Container for the list of shops */
-.shops-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-/* Card for each shop */
-.shop-info-card {
-    width: 300px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px;
-    background-color: var(--card-background);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.shop-info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Shop image styling with fixed dimensions and cropping */
-.shop-image {
+/* Table styling */
+.product-details-table {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: var(--radius);
-    margin-bottom: 15px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--card-background); /* Light card background */
+    border: 1px solid var(--border); /* Soft border color */
+    border-radius: var(--radius); /* Rounded corners */
 }
 
-/* Shop information styling */
-.shop-name {
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--foreground);
+/* Table header styling */
+.product-details-table th {
+    background-color: var(--primary); /* Primary color for header background */
+    color: var(--primary-foreground); /* Light text color for header */
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid var(--border); /* Border below the header */
 }
 
-.shop-description-text {
-    font-size: 15px;
-    color: var(--muted);
-    margin: 10px 0;
+/* Table cell styling */
+.product-details-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border); /* Soft border color for cells */
+    color: var(--foreground); /* Dark text color for cells */
 }
 
-.shop-price-tag {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--foreground);
-    margin: 10px 0;
+/* Zebra striping for table rows */
+.product-details-table tr:nth-child(even) {
+    background-color: var(--muted); /* Light color for even rows */
 }
 
-/* Add to Cart button styling */
-.add-to-cart-button {
-    padding: 12px 20px;
-    background-color: var(--primary);
-    color: var(--primary-foreground);
+
+/* Styling for product images in table */
+.product-details-image {
+    width: 100px; /* Fixed width for images */
+    height: 75px; /* Fixed height for images */
+    object-fit: cover; /* Ensure images cover the area */
+    border-radius: var(--radius); /* Rounded corners for images */
+}
+
+/* Optional button styling (if you decide to uncomment) */
+.product-details-manage-button {
+    padding: 8px 16px;
+    background-color: var(--primary); /* Primary color for button background */
+    color: var(--primary-foreground); /* Light text color for button */
     border: none;
-    border-radius: var(--radius);
+    border-radius: var(--radius); /* Rounded corners for button */
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
-.add-to-cart-button:hover {
-    background-color: var(--primary-dark);
-    transform: scale(1.05);
+.product-details-manage-button:hover {
+    background-color: var(--primary-dark); /* Darker primary color on hover */
 }

@@ -30,8 +30,8 @@ const ProductDetails = () => {
     };
 
     return (
-        <div className="product-details-container">
-            <h2>Product Details</h2>
+        <div className="product-details-wrapper">
+            <h2 className="product-details-title">Product Details</h2>
             <table className="product-details-table">
                 <thead>
                     <tr>

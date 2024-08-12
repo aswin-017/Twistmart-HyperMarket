@@ -118,3 +118,41 @@
     padding: 4px;
   }
   
+  /* Add these styles to ProductList.css */
+
+.blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+  backdrop-filter: blur(5px); /* Apply the blur effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999; /* Ensure it's above other content */
+}
+
+.login-prompt {
+  background: #fff;
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  text-align: center;
+}
+
+.login-prompt h2 {
+  margin-top: 0;
+}
+
+.login-prompt button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--primary);
+  color: var(--accent-foreground);
+  cursor: pointer;
+  font-size: 16px;
+}

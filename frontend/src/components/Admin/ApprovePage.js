@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { FaCheckCircle } from 'react-icons/fa'; // Import icon
+import { toast } from 'react-toastify'; // Import toast
+import 'react-toastify/dist/ReactToastify.css'; // Import toast styles
 import '../../assets/css/admin/ApprovePage.css';
 
 const ApprovePage = () => {
@@ -32,7 +35,6 @@ const ApprovePage = () => {
         if (isApproved) return;
 
         try {
-
             const response = await axios.get(`http://localhost:5000/api/partner-with-us/${id}`);
             const application = response.data.data;
 
@@ -73,10 +75,10 @@ const ApprovePage = () => {
             await axios.put(`http://localhost:5000/api/partner-with-us/${id}`, { isApproved: true });
 
             setIsApproved(true);
-            alert(`Application with ID: ${id} has been approved and all data has been processed!`);
+            toast.success(`Application with ID: ${id} has been approved and all data has been processed!`);
             navigate('/admin/applications-details');
         } catch (err) {
-            alert('Error approving application');
+            toast.error('Error approving application');
             console.error('Error approving application:', err);
         }
     };
@@ -161,6 +163,10 @@ const ApprovePage = () => {
                 disabled={isApproved}
                 style={{ cursor: isApproved ? 'not-allowed' : 'pointer' }}
             >
+                <FaCheckCircle 
+                    className="approve-icon"
+                    title={isApproved ? 'Already Approved' : 'Approve'}
+                />
                 {isApproved ? 'Approved' : 'Approve'}
             </button>
         </div>

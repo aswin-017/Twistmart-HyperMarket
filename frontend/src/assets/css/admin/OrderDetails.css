@@ -1,0 +1,64 @@
+/* Container for the order details */
+.order-details-container {
+    padding: 20px;
+    background-color: var(--background); /* Light background color */
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+    color: var(--foreground); /* Dark text color */
+}
+
+/* Table Styling */
+.order-details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--card-background); /* Light blue card background */
+    border: 1px solid var(--border); /* Soft blue border */
+    border-radius: var(--radius); /* Rounded corners */
+}
+
+/* Table Header Styling */
+.order-details-table th {
+    background-color: var(--muted); /* Light blue for headers */
+    color: var(--foreground); /* Dark text color */
+    text-align: left;
+    padding: 12px;
+    font-weight: 600;
+}
+
+/* Table Cells Styling */
+.order-details-table th, 
+.order-details-table td {
+    border: 1px solid var(--border); /* Soft blue border */
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Zebra Striping for Table Rows */
+.order-details-table tbody tr:nth-child(even) {
+    background-color: var(--muted); /* Light blue for even rows */
+}
+
+.order-details-table tbody tr:nth-child(odd) {
+    background-color: var(--card-background); /* Light blue for odd rows */
+}
+
+/* Styling for status column with different colors based on status */
+.order-details-table td.status {
+    font-weight: bold; /* Emphasize status values */
+}
+
+/* Hardcoded colors for status differentiation */
+.order-details-table .status-pending {
+    color: #FFCC00; /* Yellow for pending */
+}
+
+.order-details-table .status-approved {
+    color: #28A745; /* Green for approved */
+}
+
+.order-details-table .status-cancelled {
+    color: #DC3545; /* Red for cancelled */
+}

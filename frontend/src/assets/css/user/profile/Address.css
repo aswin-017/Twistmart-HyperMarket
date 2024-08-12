@@ -1,0 +1,80 @@
+/* src/assets/css/Address.css */
+
+.address-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--background); /* Use theme background color */
+  color: var(--foreground); /* Use theme text color */
+  position: relative; /* Add position relative for positioning the back button */
+}
+
+.address-box {
+  background-color: var(--muted); /* Use theme muted color */
+  padding: 30px;
+  border-radius: var(--radius); /* Use theme border radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--primary); /* Use theme primary color */
+}
+
+.address-input-group {
+  margin-bottom: 15px;
+}
+
+.address-input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.address-input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border); /* Use theme border color */
+  border-radius: var(--radius); /* Use theme border radius */
+  background-color: var(--input-background); /* Use theme input background color */
+  color: var(--foreground); /* Use theme text color */
+  font-size: 16px;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.address-submit-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: var(--radius); /* Use theme border radius */
+  background-color: var(--primary); /* Use theme primary color */
+  color: var(--primary-foreground); /* Use theme primary text color */
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.back-to-profile {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 10px 15px;
+  background-color: var(--primary); /* Use theme primary color */
+  color: var(--primary-foreground); /* Use theme primary text color */
+  border: none;
+  border-radius: var(--radius); /* Use theme border radius */
+  cursor: pointer;
+  font-size: 14px;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.back-to-profile:hover {
+  background-color: var(--primary-dark); /* Darker shade of primary color on hover */
+}

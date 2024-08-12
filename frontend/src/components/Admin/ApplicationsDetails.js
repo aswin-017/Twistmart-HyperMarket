@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa'; // Import icons
 import '../../assets/css/admin/ApplicationsDetails.css';
 
 const ApplicationsDetails = () => {
@@ -71,7 +72,6 @@ const ApplicationsDetails = () => {
                             <td>{app.shop_name}</td>
                             <td>{app.shop_description}</td>
                             <td>
-                                {/* Display Base64 image */}
                                 {app.shop_image ? (
                                     <img 
                                         src={app.shop_image}
@@ -92,8 +92,20 @@ const ApplicationsDetails = () => {
                                 <button 
                                     className="applications-details-approve-button"
                                     onClick={() => handleApprove(app.id)}
+                                    disabled={app.isApproved}
+                                    title={app.isApproved ? 'Already Approved' : 'Approve'}
                                 >
-                                    {app.isApproved ? 'Approved' : 'Approve'}
+                                    {app.isApproved ? (
+                                        <>
+                                            <FaCheckCircle className="approve-icon" />
+                                            Approved
+                                        </>
+                                    ) : (
+                                        <>
+                                            <FaTimesCircle className="approve-icon" />
+                                            Approve
+                                        </>
+                                    )}
                                 </button>
                             </td>
                         </tr>

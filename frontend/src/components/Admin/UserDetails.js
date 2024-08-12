@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { FaEdit, FaTrash } from 'react-icons/fa'; // Import icons
 import '../../assets/css/admin/UserDetails.css';
 
 const UserDetails = () => {
@@ -8,7 +9,6 @@ const UserDetails = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        // Fetch all users from the backend
         const fetchUsers = async () => {
             try {
                 const response = await axios.get('http://localhost:5000/api/auth/');
@@ -19,8 +19,6 @@ const UserDetails = () => {
         };
         fetchUsers();
     }, []);
-
-    
 
     const handleEdit = (userId) => {
         navigate(`/admin/edit-user/${userId}`);
@@ -37,7 +35,7 @@ const UserDetails = () => {
 
     return (
         <div className="user-details-container">
-            <h2>User Details</h2>
+            <h2 className="user-details-title">User Details</h2>
             <table className="user-details-table">
                 <thead>
                     <tr>
@@ -61,9 +59,17 @@ const UserDetails = () => {
                             <td>{user.phone}</td>
                             <td>{user.email_verified ? 'Yes' : 'No'}</td>
                             <td>{user.role}</td>
-                            <td>
-                                <button className="edit-button" onClick={() => handleEdit(user.id)}>Edit</button>
-                                <button className="delete-button" onClick={() => handleDelete(user.id)}>Delete</button>
+                            <td className="actions-cell">
+                                <FaEdit 
+                                    className="action-icon edit-icon" 
+                                    onClick={() => handleEdit(user.id)} 
+                                    title="Edit"
+                                />
+                                <FaTrash 
+                                    className="action-icon delete-icon" 
+                                    onClick={() => handleDelete(user.id)} 
+                                    title="Delete"
+                                />
                             </td>
                         </tr>
                     ))}
@@ -74,4 +80,3 @@ const UserDetails = () => {
 };
 
 export default UserDetails;
-

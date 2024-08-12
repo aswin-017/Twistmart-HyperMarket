@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 import ProductCard from './ProductCard';
 import '../../../assets/css/static/ProductList.css';
 import riceImage from '../../../assets/images/products/rice.avif';
@@ -18,7 +18,6 @@ import orangeImage from '../../../assets/images/products/orange.jpg';
 import mangoImage from '../../../assets/images/products/mango.jpg';
 import pineappleImage from '../../../assets/images/products/pineapple.jpg';
 
-
 // Sample products (replace with your actual data)
 const products = [
     { id: 1, name: 'Rice', price: '₹100 - ₹150', image: riceImage },
@@ -36,31 +35,51 @@ const products = [
     { id: 13, name: 'Orange', price: '₹70 - ₹90', image: orangeImage },
     { id: 14, name: 'Mango', price: '₹130 - ₹170', image: mangoImage },
     { id: 15, name: 'Pineapple', price: '₹80 - ₹100', image: pineappleImage }
-  ];
-  
+];
+
 const ProductList = () => {
     const [search, setSearch] = useState('');
+    const [isLoggedIn, setIsLoggedIn] = useState(false); // This should ideally be managed through authentication
+    const navigate = useNavigate(); // Initialize useNavigate
 
     const filteredList = products.filter(product =>
         product.name.toLowerCase().includes(search.toLowerCase())
     );
 
+    const handleLogin = () => {
+        // Redirect to the login page
+        navigate('/login');
+    };
+
     return (
         <div id="app">
-            <div className="search-wrapper">
-                <input
-                    type="text"
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                    placeholder="Search product name.."
-                />
-                <label>Search product name:</label>
-            </div>
-            <div className="wrapper">
-                {filteredList.map(product => (
-                    <ProductCard key={product.id} product={product} />
-                ))}
-            </div>
+            { !isLoggedIn && (
+                <div className="blur-overlay">
+                    <div className="login-prompt">
+                        <h2>Login Required</h2>
+                        <p>Please log in to view the products.</p>
+                        <button onClick={handleLogin}>Login</button>
+                    </div>
+                </div>
+            )}
+            { isLoggedIn && (
+                <>
+                    <div className="search-wrapper">
+                        <input
+                            type="text"
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                            placeholder="Search product name.."
+                        />
+                        <label>Search product name:</label>
+                    </div>
+                    <div className="wrapper">
+                        {filteredList.map(product => (
+                            <ProductCard key={product.id} product={product} />
+                        ))}
+                    </div>
+                </>
+            )}
         </div>
     );
 }

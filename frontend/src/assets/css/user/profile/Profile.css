@@ -1,4 +1,5 @@
-/* src/assets/css/Profile.css */
+/* Import Font Awesome for icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
 /* General styles for the profile container */
 .profile-container {
@@ -6,23 +7,34 @@
     min-height: 100vh; /* Ensure the container stretches to at least full height */
     background-color: var(--background);
     color: var(--foreground);
+    font-family: 'Poppins', sans-serif; /* Use Poppins font for a modern look */
 }
 
 /* Styles for the fixed sidebar */
 .profile-sidenav {
     position: fixed; /* Fixed position to stay visible while scrolling */
-    width: 250px; /* Fixed width for the sidebar */
+    width: 260px; /* Slightly wider for improved readability */
     height: 100%; /* Occupy full height of viewport */
     background-color: var(--muted); /* Use theme muted color */
     padding: 20px; /* Padding around the sidebar content */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Box shadow for sidebar */
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15); /* Enhanced box shadow for sidebar */
     display: flex;
     flex-direction: column;
+    border-right: 1px solid var(--border); /* Border to delineate the sidebar */
 }
 
 /* Heading style for the sidebar */
 .profile-sidenav h2 {
     margin-top: 0; /* Remove default margin for heading */
+    font-size: 2rem; /* Slightly larger heading font size */
+    color: var(--primary); /* Use theme primary color for headings */
+    font-weight: 700; /* Bold font for emphasis */
+    display: flex;
+    align-items: center;
+}
+
+.profile-sidenav i {
+    padding-right: 20px;
 }
 
 /* Style for the unordered list inside the sidebar */
@@ -30,28 +42,41 @@
     list-style-type: none; /* Remove default list styles */
     padding: 0; /* Remove default padding */
     margin: 0; /* Remove default margin */
+    flex: 1; /* Allow list to take available space */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Style for each list item in the sidebar */
 .profile-sidenav li {
-    padding: 12px 20px; /* Padding for each sidebar item */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Vertically align items */
+    padding: 17px 20px; /* Padding for each sidebar item */
     cursor: pointer; /* Pointer cursor on hover */
-    border-bottom: 1px solid var(--border); /* Use theme border color */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    border-radius: var(--radius); /* Rounded corners for better aesthetics */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+    font-size: 1.1rem; /* Adjust font size for better readability */
+    color: var(--foreground); /* Default text color */
 }
 
-/* Hover effect for sidebar items */
 .profile-sidenav li:hover {
-    background-color: var(--background);
-    border-radius: 10px; /* Use theme hover color */
+    background-color: var(--primary); /* Use theme primary color on hover */
+    color: var(--primary-foreground); /* Change text color to match primary color */
+}
+
+.profile-sidenav li i {
+    margin-right: 15px; /* Space between icon and text */
+    font-size: 1.3rem; /* Adjust icon size */
+    color: inherit; /* Inherit text color */
 }
 
 /* Styles for the main content area */
 .profile-content {
     flex: 1; /* Take remaining space in the flex container */
     padding: 20px; /* Padding inside the content area */
-    margin-left: 250px; /* Ensure content area doesn't overlap with sidebar */
+    margin-left: 260px; /* Ensure content area doesn't overlap with sidebar */
     overflow-y: auto; /* Allow content area to scroll if needed */
+    background-color: var(--background); /* Match background color with the main theme */
 }
 
 /* Styles for different sections within the content area */
@@ -59,31 +84,111 @@
 .profile-orders,
 .profile-wishlist,
 .profile-notifications {
-    background-color: var(--muted); /* Use theme muted color */
+    background-color: var(--card-background); /* Use theme card background color */
     padding: 20px; /* Padding inside each section */
     border-radius: var(--radius); /* Use theme border radius */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for sections */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced box shadow for sections */
+    margin-bottom: 20px; /* Margin between sections */
 }
 
-/* Styles for individual address cards */
-.address-card {
-    background-color: var(--background); /* Use theme background color */
-    padding: 15px; /* Padding inside the address card */
-    border: 1px solid var(--border); /* Use theme border color */
-    border-radius: var(--radius); /* Use theme border radius */
-    margin-bottom: 10px; /* Margin between address cards */
+/* Styles for profile details */
+.profile-details {
+    display: flex;
+    flex-direction: column; /* Arrange items in a column */
+    gap: 15px; /* Space between elements */
 }
 
-/* Styles for buttons in the profile */
-.edit-button,
-.add-address-button,
-.edit-button {
-    background-color: var(--primary); /* Use theme primary color */
-    color: var(--primary-foreground); /* Use theme primary text color */
+.profile-details h2 {
+    margin-bottom: 15px; /* Margin below heading */
+    font-size: 1.5rem; /* Slightly larger font size for headings */
+    color: var(--primary); /* Use theme primary color for headings */
+    font-weight: 600; /* Semi-bold font for emphasis */
+}
+
+/* Container for personal information rows */
+.profile-details-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between each row */
+}
+
+/* Each row styling */
+.profile-details-info div {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.profile-details-info strong {
+    font-weight: 600; /* Semi-bold text for labels */
+    color: var(--primary); /* Use theme primary color for labels */
+    width: 150px; /* Fixed width for labels to align items */
+}
+
+.profile-details-info p {
+    margin: 0; /* Remove default margin */
+    font-size: 1rem; /* Standard font size */
+    color: var(--foreground); /* Default text color */
+}
+
+/* Address section styles */
+.profile-addresses {
+    margin-top: 20px; /* Add margin on top */
+}
+
+.profile-addresses h2 {
+    margin-bottom: 15px; /* Margin below heading */
+    font-size: 1.5rem; /* Slightly larger font size for headings */
+    color: var(--primary); /* Use theme primary color for headings */
+    font-weight: 600; /* Semi-bold font for emphasis */
+}
+
+.address-list {
+    margin-bottom: 20px; /* Margin below the address list */
+}
+
+.address-item {
+    padding: 15px; /* Padding inside each address item */
+    border: 1px solid var(--border); /* Border around address items */
+    border-radius: var(--radius); /* Rounded corners */
+    margin-bottom: 10px; /* Space between address items */
+    background-color: var(--card-background); /* Background color for address items */
+}
+
+.add-address-button {
+    background-color: var(--primary); /* Primary button color */
+    color: var(--primary-foreground); /* Button text color */
+    padding: 10px 20px; /* Button padding */
     border: none; /* Remove default border */
-    padding: 10px 20px; /* Padding inside the button */
-    border-radius: var(--radius); /* Use theme border radius */
-    font-size: 16px; /* Font size for buttons */
+    border-radius: var(--radius); /* Rounded corners for button */
     cursor: pointer; /* Pointer cursor on hover */
-    margin: 5px; /* Margin around buttons */
+    font-size: 1rem; /* Font size for button text */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.add-address-button:hover {
+    background-color: var(--primary-dark); /* Darker color on hover */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .profile-details-info div {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .profile-details-info strong {
+        width: auto; /* Remove fixed width on smaller screens */
+    }
+
+    .profile-sidenav {
+        width: 100%; /* Sidebar takes full width on smaller screens */
+        height: auto; /* Allow sidebar to grow with content */
+        position: relative; /* Remove fixed position */
+        box-shadow: none; /* Remove shadow on smaller screens */
+        border-right: none; /* Remove border on smaller screens */
+    }
+
+    .profile-content {
+        margin-left: 0; /* Remove left margin on smaller screens */
+    }
 }

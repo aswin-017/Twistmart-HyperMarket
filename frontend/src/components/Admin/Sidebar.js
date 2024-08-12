@@ -84,13 +84,13 @@ const Sidebar = () => {
                         <FaClipboardList size={24} />
                         <span>Order details</span>
                     </li>
-                    <li
+                    {/* <li
                         className={activePath === "/admin/settings" ? "active" : ""}
                         onClick={() => handleNavigation("/settings")}
                     >
                         <FaCog size={24} />
                         <span>Settings</span>
-                    </li>
+                    </li> */}
                     <li className="logout" onClick={handleLogoutClick}>
                         <FaSignOutAlt size={24} />
                         <span>Logout</span>

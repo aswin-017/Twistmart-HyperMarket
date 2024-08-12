@@ -1,0 +1,133 @@
+/* Orders Container */
+.manage-orders-container {
+    padding: 20px;
+    background-color: var(--background); /* Light background color */
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+    color: var(--foreground); /* Dark text color */
+}
+
+/* Heading */
+.manage-orders-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--foreground); /* Dark text color */
+}
+
+/* Orders Table */
+.manage-orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--card-background); /* Light card background */
+    border: 1px solid var(--border); /* Border color */
+    border-radius: var(--radius); /* Rounded corners */
+}
+
+/* Table Header Styling */
+.manage-orders-table th {
+    background-color: var(--muted); /* Header background color */
+    color: var(--foreground); /* Text color */
+    text-align: left;
+    padding: 12px;
+    font-weight: 600;
+}
+
+/* Table Cells Styling */
+.manage-orders-table th, 
+.manage-orders-table td {
+    border: 1px solid var(--border); /* Border color */
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Zebra Striping for Table Rows */
+.manage-orders-table tbody tr:nth-child(even) {
+    background-color: var(--muted); /* Light color for even rows */
+}
+
+.manage-orders-table tbody tr:nth-child(odd) {
+    background-color: var(--card-background); /* Light color for odd rows */
+}
+
+/* Status Column Styling */
+.manage-orders-table td.status {
+    font-weight: bold; /* Emphasize status values */
+}
+
+/* Hardcoded colors for status differentiation */
+.manage-orders-table .status-pending {
+    color: #FFCC00; /* Yellow for pending */
+}
+
+.manage-orders-table .status-shipped {
+    color: #17A2B8; /* Teal for shipped */
+}
+
+.manage-orders-table .status-delivered {
+    color: #28A745; /* Green for delivered */
+}
+
+.manage-orders-table .status-canceled {
+    color: #DC3545; /* Red for canceled */
+}
+
+/* Actions Column */
+.actions-cell {
+    display: flex;
+    gap: 10px; /* Space between actions */
+    justify-content: center; /* Center actions */
+}
+
+/* Select Dropdown */
+.manage-order-status-select {
+    padding: 8px;
+    border: 1px solid var(--border); /* Border color */
+    border-radius: var(--radius); /* Rounded corners */
+    background-color: var(--input-background); /* Background color */
+    color: var(--foreground); /* Text color */
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s; /* Smooth transitions */
+}
+
+.manage-order-status-select:hover {
+    border-color: var(--primary); /* Border color on hover */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+/* Dropdown Options */
+.manage-order-status-select option {
+    padding: 8px;
+}
+
+/* Update Button */
+.update-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: var(--radius); /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 14px;
+    color: var(--primary-foreground); /* White text color */
+    background-color: var(--primary); /* Primary color */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.update-button:hover {
+    background-color: var(--primary-dark); /* Darker primary color on hover */
+    transform: translateY(-2px);
+}
+
+/* Empty State Message */
+.manage-orders-empty {
+    font-size: 1.2rem;
+    color: var(--muted); /* Muted color for empty state */
+    text-align: center;
+    margin-top: 50px;
+}

@@ -4,7 +4,7 @@ const connection = require('../config/db');
 const {
     createUser,
     findUserByEmail,
-    findUserById,
+
     updateUser,
     deleteUserFromDB,
     findAllUsers
@@ -55,15 +55,27 @@ const logIn = (req, res) => {
     });
 };
 
-// Get user by ID controller
 const getUserById = (req, res) => {
     const { id } = req.params;
-    findUserById(id, (err, results) => {
-        if (err) return res.status(500).json({ error: err });
-        if (results.length === 0) return res.status(404).json({ message: 'User not found' });
+    console.log(`Received request to fetch user with ID: ${id}`); // Debugging log
+
+    // Directly implement the database query within this function
+    const query = `SELECT * FROM Authenticated WHERE id = ?`;
+    connection.query(query, [id], (err, results) => {
+        if (err) {
+            console.error('Database query error:', err); // Debugging log
+            return res.status(500).json({ error: err.message });
+        }
+        console.log('Query results:', results); // Debugging log
+        if (results.length === 0) {
+            console.log('User not found'); // Debugging log
+            return res.status(404).json({ message: 'User not found' });
+        }
         res.status(200).json(results[0]);
     });
 };
+
+
 
 const createProductPartner = async (req, res) => {
     const { email, password, firstName, lastName, phone } = req.body;

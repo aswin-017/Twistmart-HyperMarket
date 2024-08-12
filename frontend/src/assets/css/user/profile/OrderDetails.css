@@ -1,0 +1,96 @@
+/* Container for order details */
+.order-details-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--background); /* Background color from the theme */
+    border-radius: var(--radius); /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+
+/* Title for order details */
+.order-details-title {
+    font-size: 2.5rem; /* Larger font size for the title */
+    margin-bottom: 20px;
+    color: var(--primary); /* Primary color for title */
+    text-align: center;
+    font-weight: 700; /* Bold title */
+}
+
+/* Empty state message */
+.order-details-empty {
+    font-size: 1.2rem;
+    color: var(--muted); /* Muted color for empty state */
+    text-align: center;
+    padding: 20px; /* Padding to center the message */
+}
+
+/* Style for each order item */
+.order-item {
+    border: 1px solid var(--border); /* Border color from the theme */
+    border-radius: var(--radius); /* Rounded corners */
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: var(--card-background); /* Background color for items */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for items */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+}
+
+.order-item:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Style for paragraph elements inside order items */
+.order-item p {
+    margin: 8px 0; /* Spacing between paragraphs */
+    font-size: 1.1rem; /* Slightly larger font size */
+    color: var(--foreground); /* Text color from the theme */
+}
+
+/* Specific styles for different types of order information */
+.order-item-product {
+    font-weight: 600; /* Slightly bold */
+    color: var(--primary); /* Primary color for product name */
+}
+
+.order-item-shop {
+    font-style: italic; /* Italicize shop name */
+    color: var(--accent); /* Accent color for shop name */
+}
+
+.order-item-price,
+.order-item-quantity,
+.order-item-total {
+    color: var(--foreground); /* Text color from the theme */
+}
+
+/* Highlight price */
+.order-item-price {
+    font-weight: 600; /* Bold price */
+}
+
+/* Highlight total price */
+.order-item-total {
+    font-weight: 700; /* Bolder for emphasis */
+    color: var(--primary); /* Primary color for total price */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .order-details-container {
+        padding: 15px; /* Reduced padding for smaller screens */
+    }
+
+    .order-item {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+
+    .order-details-title {
+        font-size: 2rem; /* Adjust title font size */
+    }
+
+    .order-item p {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+}

@@ -1,13 +1,12 @@
-/* AddProduct.css */
-
 /* Container for Add Product Section */
 .add-product-container {
-    width: 50%;
-    margin: 0 auto;
+    width: 60%;
+    max-width: 900px;
+    margin: 30px auto;
     padding: 20px;
-    background-color: var(--background); /* Use light blue background */
-    border-radius: var(--radius); /* Use rounded corners from variable */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--background); /* Light background for contrast */
+    border-radius: var(--radius); /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 /* Forms Styling */
@@ -16,15 +15,19 @@
     flex-direction: column;
 }
 
+/* Form Headers */
 .product-form h2, .category-form h2 {
     margin-bottom: 20px;
-    color: var(--foreground); /* Use black text color for contrast */
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--foreground); /* Dark text for titles */
 }
 
+/* Labels */
 .product-form label, .category-form label {
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: var(--foreground); /* Use black text color for contrast */
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--foreground); /* Dark text for labels */
 }
 
 /* Input and Textarea Styling */
@@ -33,57 +36,82 @@
 .product-form textarea, 
 .category-form textarea, 
 .category-form select {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid var(--border); /* Use soft blue border */
-    border-radius: var(--radius); /* Use rounded corners from variable */
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid var(--border); /* Soft border */
+    border-radius: var(--radius); /* Rounded corners */
+    background-color: var(--input-background); /* Light background for inputs */
+    font-size: 1rem;
+    color: var(--text); /* Text color for inputs */
 }
 
 /* Form Navigation Styling */
 .form-navigation {
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
 }
 
 /* Button Styling */
 .save-next-button, 
 .back-button, 
 .add-product-button {
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: none;
-    border-radius: var(--radius); /* Use rounded corners from variable */
+    border-radius: var(--radius); /* Rounded corners */
     cursor: pointer;
-    color: var(--primary-foreground); /* White text color */
-    font-weight: bold;
-    transition: background-color 0.3s, opacity 0.2s; /* Smooth transitions */
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-foreground); /* Light text color */
+    transition: background-color 0.3s ease, box-shadow 0.2s ease; /* Smooth transitions */
 }
 
 /* Save & Next Button */
 .save-next-button {
-    background-color: var(--primary); /* Use strong blue primary color */
+    background-color: var(--primary); /* Primary color for save & next */
 }
 
 .save-next-button:hover {
-    background-color: var(--primary-dark); /* Use darker blue for hover */
-    opacity: 0.8;
+    background-color: var(--primary-dark); /* Darker shade on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
 }
 
 /* Back Button */
 .back-button {
-    background-color: var(--muted); /* Use lighter blue for background */
+    background-color: var(--muted); /* Muted color for back */
 }
 
 .back-button:hover {
-    background-color: var(--primary-dark); /* Use darker blue for hover */
-    opacity: 0.8;
+    background-color: var(--primary-dark); /* Darker shade on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
 }
 
 /* Add Product Button */
 .add-product-button {
-    background-color: var(--primary); /* Use strong blue primary color */
+    background-color: var(--primary); /* Primary color for add product */
 }
 
 .add-product-button:hover {
-    background-color: var(--primary-dark); /* Use darker blue for hover */
-    opacity: 0.8;
+    background-color: var(--primary-dark); /* Darker shade on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .add-product-container {
+        width: 90%;
+    }
+
+    .product-form, .category-form {
+        flex-direction: column;
+    }
+
+    .form-navigation {
+        flex-direction: column;
+    }
+
+    .form-navigation button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }

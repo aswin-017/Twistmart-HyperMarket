@@ -1,9 +1,11 @@
-/* src/assets/css/admin/ApplicationsDetails.css */
-
 /* Container for Applications Details Section */
 .applications-details-container {
     padding: 20px;
-    background-color: var(--background); /* Use light blue background */
+    background-color: var(--background); /* Light background color */
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+    color: var(--foreground); /* Dark text color */
 }
 
 /* Table Styling */
@@ -11,43 +13,72 @@
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background-color: var(--card-background); /* Use light blue card background */
-}
-
-.applications-details-table th, 
-.applications-details-table td {
-    border: 1px solid var(--border); /* Use soft blue border */
-    padding: 8px;
+    background-color: var(--card-background); /* Light blue card background */
+    border: 1px solid var(--border); /* Soft blue border */
+    border-radius: var(--radius); /* Rounded corners */
 }
 
 /* Table Header Styling */
 .applications-details-table th {
-    background-color: var(--muted); /* Use lighter blue for header background */
-    color: var(--foreground); /* Use black text color for contrast */
+    background-color: var(--muted); /* Light blue for headers */
+    color: var(--foreground); /* Dark text color */
     text-align: left;
+    padding: 12px;
+    font-weight: 600;
+}
+
+/* Table Cells Styling */
+.applications-details-table th, 
+.applications-details-table td {
+    border: 1px solid var(--border); /* Soft blue border */
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Zebra Striping for Table Rows */
+.applications-details-table tbody tr:nth-child(even) {
+    background-color: var(--muted); /* Light blue for even rows */
+}
+
+.applications-details-table tbody tr:nth-child(odd) {
+    background-color: var(--card-background); /* Light blue for odd rows */
+}
+
+/* Hover Effect for Table Rows */
+.applications-details-table tr:hover {
+    background-color: var(--accent); /* Light blue on hover */
 }
 
 /* Shop Image Styling */
 .applications-details-shop-image {
     width: 50px;
     height: 50px;
-    object-fit: cover; /* Ensure images cover the area without distortion */
-    border-radius: 50%; /* Rounded corners for images */
+    object-fit: cover; /* Ensure images cover the area */
+    border-radius: 50%; /* Round image corners */
 }
 
 /* Approve Button Styling */
 .applications-details-approve-button {
+    display: flex;
+    align-items: center;
     padding: 5px 10px;
     cursor: pointer;
-    background-color: var(--primary); /* Use strong blue primary color */
-    color: var(--primary-foreground); /* White text color */
+    background-color: var(--primary); /* Strong blue */
+    color: var(--primary-foreground); /* White text */
     border: none;
-    border-radius: var(--radius); /* Use rounded corners from variable */
-    font-size: 14px; /* Consistent font size */
+    border-radius: var(--radius); /* Rounded corners */
+    font-size: 14px;
+    font-weight: 500;
     transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
 }
 
 .applications-details-approve-button:hover {
-    background-color: var(--primary-dark); /* Use darker blue for hover */
+    background-color: var(--primary-dark); /* Darker blue on hover */
     transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.applications-details-approve-button .approve-icon {
+    margin-right: 8px; /* Space between icon and text */
+    font-size: 16px; /* Size of the icon */
 }

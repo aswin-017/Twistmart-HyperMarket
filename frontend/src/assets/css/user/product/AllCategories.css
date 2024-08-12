@@ -1,52 +1,80 @@
-/* AllCategories.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+/* Base styling for all themes */
 .all-categories-container {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Page title styling */
+.page-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+  transition: color 0.3s ease;
+}
+
+/* Grid layout for categories */
+.categories-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Category card styling */
+.category-card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 240px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Hover effect for category cards */
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: var(--card-background-hover);
+}
+
+/* Styling for links inside category cards */
+.category-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Content padding inside category cards */
+.category-card-content {
+  padding: 20px;
+}
+
+/* Category name styling */
+.category-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+/* Fade-in animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px); /* Fade-in from the left */
   }
-  
-  .page-title {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 2rem;
-    color: #333;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
-  
-  .categories-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .category-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 200px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .category-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .category-link {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .category-card-content {
-    padding: 20px;
-  }
-  
-  .category-name {
-    font-size: 1.25rem;
-    color: #333;
-  }
-  
+}

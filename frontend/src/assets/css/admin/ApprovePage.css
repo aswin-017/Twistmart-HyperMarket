@@ -1,50 +1,85 @@
-/* src/assets/css/admin/ApprovePage.css */
-
+/* Approve Page Container */
 .approve-page-container {
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+    color: var(--foreground); /* Dark text color */
+    background-color: var(--background); /* Light blue background for the container */
 }
 
+/* Table Styling */
 .approve-page-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    background-color: var(--card-background); /* Very light blue for the table background */
+    border: 1px solid var(--border); /* Soft blue border */
+    border-radius: var(--radius); /* Rounded corners */
 }
 
-.approve-page-table th, .approve-page-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
+/* Table Header */
 .approve-page-table th {
-    background-color: #f2f2f2;
+    background-color: var(--muted); /* Strong blue for headers */
+    color: var(--primary-foreground); /* White text color on primary color */
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
 }
 
+/* Table Cells */
+.approve-page-table th, .approve-page-table td {
+    border: 1px solid var(--border); /* Soft blue border */
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Zebra Striping for Rows */
+.approve-page-table tbody tr:nth-child(even) {
+    background-color: var(--muted); /* Lighter blue for even rows */
+}
+
+.approve-page-table tbody tr:nth-child(odd) {
+    background-color: var(--card-background); /* Very light blue for odd rows */
+}
+
+/* Hover Effect for Rows */
+.approve-page-table tr:hover {
+    background-color: var(--accent); /* Light blue on hover */
+}
+
+/* Shop Image */
 .approve-page-shop-image {
     width: 100px;
     height: 100px;
+    object-fit: cover;
+    border-radius: var(--radius); /* Rounded corners for the image */
 }
 
+/* Approval Button */
 .approve-page-approve-button {
     margin-top: 20px;
     padding: 10px 20px;
     cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
+    background-color: var(--primary); /* Strong blue for button */
+    color: var(--primary-foreground); /* White text color */
     border: none;
-    border-radius: 4px;
+    border-radius: var(--radius); /* Rounded corners */
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
 }
 
+/* Button Hover Effect */
 .approve-page-approve-button:hover {
-    background-color: #45a049;
+    background-color: var(--primary-dark); /* Darker blue on hover */
 }
 
-
-
-
+/* Approved Button State */
 .approve-page-approve-button.approved {
-    background-color: #d4edda; /* Example: green background */
-    border-color: #c3e6cb; /* Example: green border */
-    color: #155724; /* Example: green text */
+    background-color: #d4edda; /* Light green background */
+    border-color: #c3e6cb; /* Green border */
+    color: #155724; /* Dark green text */
     cursor: not-allowed; /* Change cursor when button is approved */
 }

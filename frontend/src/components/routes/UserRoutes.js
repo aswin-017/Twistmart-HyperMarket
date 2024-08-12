@@ -12,6 +12,7 @@ import Checkout from '../User/cart/Checkout';
 import Landing from '../User/landing/LandingPage';
 import Footer from '../static/landing/Footer';
 import AllCategories from '../User/product/AllCategories';
+import Address from '../User/profile/Address';
 
 const UserRoutes = () => {
   const { isLoggedIn, userRole } = React.useContext(AuthContext);
@@ -32,6 +33,7 @@ const UserRoutes = () => {
           <Route path="/products/:name" element={<ProductDetails />} />
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/add-address/:userId" element={<Address />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/allcategories" element={<AllCategories />} />
           <Route path="*" element={<Navigate to="/" />} />

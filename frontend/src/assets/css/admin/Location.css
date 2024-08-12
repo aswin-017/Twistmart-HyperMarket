@@ -1,31 +1,85 @@
+/* Container for the location details page */
 .location-container {
     padding: 20px;
+    background-color: var(--background); /* Use theme background color */
+    color: var(--foreground); /* Use theme text color */
 }
 
+/* Heading for the location details */
+.location-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--primary); /* Use theme primary color */
+    text-align: center; /* Center align heading */
+}
+
+/* Styling for location details section */
 .location-details {
-    margin-top: 20px;
+    background-color: var(--muted); /* Use theme muted color */
+    padding: 20px;
+    border-radius: var(--radius); /* Use theme border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto; /* Center align the details box */
 }
 
+/* Styling for each item in location details */
 .location-item {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1rem;
 }
 
-.location-item label {
-    margin-right: 10px;
+/* Strong tag styling for labels */
+.location-item strong {
+    color: var(--primary); /* Use theme primary color */
+    font-weight: 600; /* Semi-bold font for emphasis */
 }
 
+/* Buttons for saving and editing */
 .location-save-button, .location-edit-button {
-    margin-top: 10px;
-    padding: 5px 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--radius); /* Use theme border radius */
+    font-size: 1rem;
     cursor: pointer;
+    color: var(--primary-foreground); /* Use theme primary text color */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    margin-top: 20px; /* Space above buttons */
 }
 
 .location-save-button {
-    background-color: #4CAF50;
-    color: white;
+    background-color: var(--success); /* Use theme success color */
+}
+
+.location-save-button:hover {
+    background-color: var(--success-dark); /* Darker shade on hover */
 }
 
 .location-edit-button {
-    background-color: #008CBA;
-    color: white;
+    background-color: var(--info); /* Use theme info color */
+}
+
+.location-edit-button:hover {
+    background-color: var(--info-dark); /* Darker shade on hover */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .location-container {
+        padding: 10px;
+    }
+
+    .location-details {
+        padding: 15px;
+        margin: 0 10px;
+    }
+    
+    .location-item {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+
+    .location-save-button, .location-edit-button {
+        font-size: 0.9rem; /* Adjust button font size for smaller screens */
+    }
 }

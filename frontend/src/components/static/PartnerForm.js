@@ -1,5 +1,7 @@
 import '../../assets/css/static/PartnerForm.css';
 import React, { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Import the default styles
 
 const PartnerForm = () => {
   const [step, setStep] = useState(1);
@@ -72,15 +74,34 @@ const PartnerForm = () => {
       const result = await response.json();
       
       if (result.success) {
-        alert('Form submitted successfully!');
-        // Handle successful submission (e.g., redirect to another page)
+        toast.success('Form submitted successfully!');
+        // Handle successful submission (e.g., reset form or redirect)
+        setFormData({
+          email: '',
+          password: '',
+          firstName: '',
+          lastName: '',
+          phone: '',
+          role: 'PRODUCT_PARTNER',
+          shopName: '',
+          shopDescription: '',
+          shopImage: null,
+          address: '',
+          city: '',
+          state: '',
+          postalCode: '',
+          country: '',
+          contactNumber: '',
+          isApproved: false
+        });
+        setStep(1);
       } else {
-        alert('Submission failed!');
+        toast.error('Submission failed!');
         // Handle failed submission
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('An error occurred while submitting the form.');
+      toast.error('An error occurred while submitting the form.');
     }
   };
 
@@ -167,6 +188,7 @@ const PartnerForm = () => {
           {step === 3 && <button type="submit" className="btn btn-submit">Submit</button>}
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 };

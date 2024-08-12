@@ -1,33 +1,75 @@
-import '../../../assets/css/user/cart/Checkout.css'
-import React from 'react';
-import { useCart } from '../../contexts/CartContext';
+import '../../../assets/css/user/cart/Checkout.css';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext'; // Import AuthContext
 import { toast } from 'react-toastify';
-
-
 import 'react-toastify/dist/ReactToastify.css';
+import { FaCashRegister, FaCreditCard, FaShoppingCart } from 'react-icons/fa';
 
 const Checkout = () => {
-  const { cartItems, clearCart, calculateTotalPrice } = useCart();
+  const [cartItems, setCartItems] = useState([]);
+  const { userId } = useAuth(); // Get userId from AuthContext
   const navigate = useNavigate();
 
-  // Function to calculate the total price of all items in the cart
+  useEffect(() => {
+    const fetchCartItems = async () => {
+      try {
+        if (!userId) {
+          toast.error('User not authenticated');
+          return;
+        }
+        const response = await fetch(`http://localhost:5000/api/cart?user_id=${userId}`);
+        if (!response.ok) throw new Error('Failed to fetch cart items');
+        const result = await response.json();
+        
+        console.log('Fetched cart items:', result); // Debugging line
+
+        setCartItems(result);
+      } catch (error) {
+        console.error('Error fetching cart items:', error);
+        toast.error('An error occurred while fetching cart items');
+      }
+    };
+
+    fetchCartItems();
+  }, [userId]);
+
+  const calculateTotalPrice = (item) => item.price * item.quantity;
+
   const calculateTotalOrderedPrice = () => {
     return cartItems.reduce((total, item) => total + calculateTotalPrice(item), 0);
   };
 
-  const handlePlaceOrder = () => {
-    // Handle order placement logic here (if needed)
-    console.log('Order placed');
+  const handlePlaceOrder = async (paymentMethod) => {
+    try {
+      if (!userId) {
+        toast.error('User not authenticated');
+        return;
+      }
+      const response = await fetch('http://localhost:5000/api/checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          user_id: userId,
+          cartItems,
+          payment_method: paymentMethod,
+        }),
+      });
 
-    // Clear cart items
-    clearCart();
-
-    // Show success message
-    toast.success('Order placed successfully!');
-
-    // Redirect to products or another page
-    navigate('/products');
+      const result = await response.json();
+      if (response.ok) {
+        toast.success('Order placed successfully!');
+        setCartItems([]); // Clear cart items locally
+        navigate('/products');
+      } else {
+        toast.error(result.message || 'Failed to place order');
+      }
+    } catch (error) {
+      console.error('Error placing order:', error);
+      toast.error('An error occurred while placing the order');
+    }
   };
 
   return (
@@ -39,8 +81,8 @@ const Checkout = () => {
         <div>
           {cartItems.map((item, index) => (
             <div key={index} className="checkout-item">
-              <p className="checkout-item-name">Product: {item.productName}</p>
-              <p className="checkout-item-shop">Shop: {item.shopName}</p>
+              <p className="checkout-item-name">Product: {item.product_name}</p>
+              <p className="checkout-item-shop">Shop: {item.shop_name}</p>
               <p className="checkout-item-price">Price: ₹{item.price}</p>
               <p className="checkout-item-quantity">Quantity: {item.quantity}</p>
               <p className="checkout-item-total">Total Price: ₹{calculateTotalPrice(item)}</p>
@@ -49,7 +91,14 @@ const Checkout = () => {
           <div className="checkout-total">
             <h2 className="checkout-total-price">Total Ordered Price: ₹{calculateTotalOrderedPrice()}</h2>
           </div>
-          <button className="checkout-place-order-btn" onClick={handlePlaceOrder}>Place Order</button>
+          <div className="checkout-buttons">
+            <button className="checkout-place-order-btn" onClick={() => handlePlaceOrder('credit_card')}>
+              <FaCreditCard className="icon" /> Pay with Card
+            </button>
+            <button className="checkout-cash-on-delivery-btn" onClick={() => handlePlaceOrder('cash_on_delivery')}>
+              <FaCashRegister className="icon" /> Cash on Delivery
+            </button>
+          </div>
         </div>
       )}
     </div>

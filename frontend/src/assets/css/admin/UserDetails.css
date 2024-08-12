@@ -4,74 +4,94 @@
     max-width: 1200px;
     margin: 0 auto;
     font-family: 'Arial', sans-serif;
-    color: var(--text-dark); /* Dark text color */
-  }
-  
-  /* Heading */
+    color: var(--foreground); /* Black text color for contrast */
+    background-color: var(--background); /* Light blue background for the container */
+}
+
 /* Heading */
+.user-details-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--primary); /* Strong blue for title */
+    text-align: center; /* Center align heading */
+}
 
-
-  
-  /* User Details Table */
-  .user-details-table {
+/* User Details Table */
+.user-details-table {
     width: 100%;
     border-collapse: collapse;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     margin-top: 20px;
-  }
-  
-  /* Table Header and Cells */
-  .user-details-table th,
-  .user-details-table td {
-    border: 1px solid var(--border); /* Border color */
+    background-color: var(--card-background); /* Very light blue for the table background */
+}
+
+/* Table Header and Cells */
+.user-details-table th,
+.user-details-table td {
+    border: 1px solid var(--border); /* Soft blue border */
     padding: 12px 15px;
     text-align: left;
     vertical-align: middle;
-  }
-  
-  /* Table Header */
-  .user-details-table th {
-    background-color: var(--muted); /* Lighter background for headers */
-    color: var(--text-dark); /* Darker text color */
+}
+
+/* Table Header */
+.user-details-table th {
+    background-color: var(--primary); /* Strong blue for headers */
+    color: var(--primary-foreground); /* White text color on primary color */
     font-weight: 600;
-  }
-  
-  /* Table Row Hover Effect */
-  .user-details-table tr:hover {
-    background-color: var(--hover-background); /* Light background on hover */
+}
+
+/* Alternating Row Background Colors */
+.user-details-table tbody tr:nth-child(even) {
+    background-color: var(--muted); /* Lighter blue for even rows */
+}
+
+.user-details-table tbody tr:nth-child(odd) {
+    background-color: var(--card-background); /* Very light blue for odd rows */
+}
+
+/* Table Row Hover Effect */
+.user-details-table tr:hover {
+    background-color: var(--accent); /* Light blue on hover */
     transition: background-color 0.3s;
-  }
-  
-  /* Buttons */
-  .edit-button,
-  .delete-button {
+}
+
+/* Actions Column */
+.actions-cell {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    justify-content: center; /* Center buttons */
+}
+
+/* Buttons */
+.edit-button,
+.delete-button {
     padding: 8px 12px;
-    margin: 0 5px;
     border: none;
     border-radius: var(--radius); /* Rounded corners */
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     font-size: 14px;
     color: var(--primary-foreground); /* White text color */
-  }
-  
-  /* Edit Button */
-  .edit-button {
-    background-color: var(--primary); /* Primary color */
-  }
-  
-  .edit-button:hover {
-    background-color: var(--primary-dark); /* Darker primary color on hover */
+}
+
+/* Edit Button */
+.edit-button {
+    background-color: var(--primary); /* Strong blue for edit button */
+}
+
+.edit-button:hover {
+    background-color: var(--primary-dark); /* Darker blue on hover */
     transform: translateY(-2px);
-  }
-  
-  /* Delete Button */
-  .delete-button {
-    background-color: var(--accent); /* Accent color */
-  }
-  
-  .delete-button:hover {
-    background-color: var(--accent-dark); /* Darker accent color on hover */
+}
+
+/* Delete Button */
+.delete-button {
+    background-color: var(--accent); /* Light blue for delete button */
+}
+
+.delete-button:hover {
+    background-color: var(--accent-dark); /* Darker light blue on hover */
     transform: translateY(-2px);
-  }
-  
+}
